@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
+import CaseStudies from './pages/portfolio/CaseStudies';
+import CaseStudyDetail from './pages/portfolio/CaseStudyDetail';
 import Contact from './pages/Contact';
 import ServicesOverview from './pages/services/ServicesOverview';
 import ServiceDetail from './pages/services/ServiceDetail';
@@ -34,7 +36,8 @@ const App: React.FC = () => {
             {/* Portfolio routes */}
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/projects" element={<Portfolio />} />
-            <Route path="/portfolio/case-studies" element={<Portfolio />} />
+            <Route path="/portfolio/case-studies" element={<CaseStudies />} />
+            <Route path="/portfolio/case-studies/:id" element={<CaseStudyDetail />} />
             
             <Route path="/contact" element={<Contact />} />
             

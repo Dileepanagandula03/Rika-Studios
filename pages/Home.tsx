@@ -50,24 +50,21 @@ const ProcessStep: React.FC<{
 }> = ({ step, title, desc, icon, index, isVisible }) => {
   return (
     <div 
-      className={`relative flex flex-col items-start transition-all duration-1000 ease-out transform ${
+      className={`relative flex flex-col items-start transition-all duration-[1000ms] transform ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
       }`}
-      style={{ transitionDelay: `${(index + 2) * 150}ms` }}
+      style={{ transitionDelay: `${(index + 1) * 150}ms` }}
     >
       <div className="mb-6 relative group">
-        <div className="w-16 h-16 rounded-2xl bg-white/40 backdrop-blur-md flex items-center justify-center text-[#E91E63] shadow-sm border border-white/50 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[#E91E63]/5 animate-pulse rounded-2xl"></div>
-          <div className="relative z-10 animate-float" style={{ animationDelay: `${index * 0.5}s`, animationDuration: '4s' }}>
-            {icon}
-          </div>
+        <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-[#E91E63] shadow-sm border border-gray-100 transition-all group-hover:shadow-md group-hover:-translate-y-1">
+          {icon}
         </div>
-        <span className="absolute -top-3 -left-3 text-[10px] font-black tracking-widest text-[#E91E63]/20 uppercase">
+        <span className="absolute -top-3 -left-3 text-[10px] font-black tracking-widest text-gray-300 uppercase font-serif italic">
           {step}
         </span>
       </div>
-      <h4 className="text-xl font-serif text-[#2D3134] mb-3">{title}</h4>
-      <p className="text-gray-600/80 text-sm font-light leading-relaxed max-w-[280px]">
+      <h4 className="text-2xl font-serif text-[#2D3134] mb-3 tracking-tight">{title}</h4>
+      <p className="text-gray-500 text-[14px] font-light leading-relaxed max-w-[260px]">
         {desc}
       </p>
     </div>
@@ -150,8 +147,8 @@ const Home: React.FC = () => {
       const viewportHeight = window.innerHeight;
       const startTrigger = rect.top - viewportHeight;
       const distance = rect.height + viewportHeight;
-      const progress = Math.min(Math.max((Math.abs(startTrigger) / distance), 0), 1);
-      const mappedProgress = Math.min(Math.max((progress - 0.2) * 1.5, 0), 1);
+      const rawProgress = Math.min(Math.max((Math.abs(startTrigger) / distance), 0), 1);
+      const mappedProgress = Math.min(Math.max((rawProgress - 0.2) * 1.5, 0), 1);
       setUnderlineProgress(mappedProgress);
     };
 
@@ -172,7 +169,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="bg-white">
-      {/* HERO - REFINED FONT SIZE & VISIBILITY */}
+      {/* HERO */}
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
           <video autoPlay loop muted playsInline onLoadedData={() => setVideoLoaded(true)}
@@ -184,12 +181,10 @@ const Home: React.FC = () => {
         
         <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
           <div className="max-w-5xl">
-            <span className="block text-gray-500 text-[10px] uppercase tracking-[10px] font-black mb-6">Established 2024 • 2026 Edition</span>
-            {/* Reduced h1 font size for better visual hierarchy */}
+            <span className="block text-gray-500 text-[10px] uppercase tracking-[10px] font-black mb-6">2026 Edition</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#2D3134] leading-[1.1] mb-8 tracking-tighter">
               Growth Infrastructure <br /> for the <span className="italic text-[#E91E63]">Human Era.</span>
             </h1>
-            {/* Significantly improved subline visibility and weight */}
             <p className="text-base md:text-lg text-[#2D3134] font-medium leading-relaxed mb-12 max-w-2xl mx-auto drop-shadow-sm">
               We design authority systems, AI-assisted pipelines, and conversion environments that scale brands without stripping their soul.
             </p>
@@ -205,49 +200,47 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* BLOCK 2: METHODOLOGY */}
-      <section ref={block2Ref} className="py-24 md:py-32 bg-[#E2E5D0] relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-           <svg className="absolute -left-20 top-0 w-[120%] h-full opacity-[0.08] blur-[2px] rotate-[-15deg] transform-gpu scale-125" viewBox="0 0 100 100" preserveAspectRatio="none">
-             <path d="M0,0 Q30,10 50,50 T100,100 M10,0 Q40,15 60,60 T110,110 M20,0 Q50,20 70,70 T120,120 M-10,10 Q20,30 40,80 T90,130" fill="none" stroke="black" strokeWidth="8" strokeLinecap="round" />
-           </svg>
-        </div>
-
+      {/* BLOCK 2: METHODOLOGY - CLEAN AESTHETIC */}
+      <section ref={block2Ref} className="py-24 md:py-40 bg-[#F2F4E8] relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
-            <div className={`lg:w-5/12 lg:sticky lg:top-40 transition-all duration-1000 transform ${block2Visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-              <span className="text-[#E91E63] text-[9px] uppercase tracking-[10px] font-black block mb-6 drop-shadow-sm">Our Methodology</span>
-              <div className="relative inline-block mb-8">
-                <h2 className="text-4xl md:text-5xl font-serif text-[#2D3134] leading-[1.1] relative z-10">
+          <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-32">
+            <div className={`lg:w-5/12 transition-all duration-[1000ms] transform ${block2Visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
+              <span className="text-[#E91E63] text-[10px] uppercase tracking-[12px] font-black block mb-8">Our Methodology</span>
+              <div className="relative inline-block mb-10">
+                <h2 className="text-4xl md:text-6xl font-serif text-[#2D3134] leading-[1.05] relative z-10">
                   How we replace <br />
                   <span className="italic text-[#E91E63]">robotic noise</span> <br />
                   with human intent.
                 </h2>
-                <svg className="absolute -bottom-2 left-0 w-full h-4 z-0 pointer-events-none" preserveAspectRatio="none">
+                <svg className="absolute -bottom-4 left-0 w-full h-6 z-0 pointer-events-none" preserveAspectRatio="none">
                   <path 
-                    d="M 0 8 Q 150 12 300 8" 
+                    d="M 0 10 Q 200 15 450 10" 
                     fill="none" 
                     stroke="#E91E63" 
-                    strokeWidth="3" 
+                    strokeWidth="4" 
                     strokeLinecap="round"
                     style={{ 
-                      strokeDasharray: '300', 
-                      strokeDashoffset: `${300 * (1 - underlineProgress)}`,
-                      transition: 'stroke-dashoffset 0.1s linear'
+                      strokeDasharray: '450', 
+                      strokeDashoffset: `${450 * (1 - underlineProgress)}`,
+                      transition: 'stroke-dashoffset 0.15s linear'
                     }}
                   />
                 </svg>
               </div>
-              <p className="text-gray-700/80 text-base font-light leading-relaxed mb-10 max-w-sm transition-opacity duration-1000 delay-300">
+              <p className="text-gray-700/80 text-lg font-light leading-relaxed mb-12 max-w-sm">
                 Growth without visibility is chaos. We design predictable demand engines built on buyer psychology, not platform tricks.
               </p>
+              
+              <Link to="/about" className="text-[11px] font-black uppercase tracking-[4px] hover:text-[#E91E63] transition-colors inline-flex items-center gap-2 group">
+                Discover Our Ethos <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
 
-            <div className="lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
-              <ProcessStep isVisible={block2Visible} index={0} step="01" title="Semantic Audit" icon={<Search size={24} />} desc="Finding high-intent language your customers use when they're ready to buy." />
-              <ProcessStep isVisible={block2Visible} index={1} step="02" title="Authored Trust" icon={<Waves size={24} />} desc="Digital homes that radiate high-authority trust in every pixel." />
-              <ProcessStep isVisible={block2Visible} index={2} step="03" title="Guided Nurture" icon={<Cpu size={24} />} desc="AI agents that speak with your unique brand soul to bridge the gap to sales." />
-              <ProcessStep isVisible={block2Visible} index={3} step="04" title="Live Scale" icon={<BarChart3 size={24} />} desc="Expand what works through real-time, transparent growth analytics." />
+            <div className="lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20 pt-12">
+              <ProcessStep isVisible={block2Visible} index={0} step="01" title="Semantic Audit" icon={<Search size={28} />} desc="Finding high-intent language your customers use when they're ready to buy." />
+              <ProcessStep isVisible={block2Visible} index={1} step="02" title="Authored Trust" icon={<Waves size={28} />} desc="Digital homes that radiate high-authority trust in every pixel." />
+              <ProcessStep isVisible={block2Visible} index={2} step="03" title="Guided Nurture" icon={<Cpu size={28} />} desc="AI agents that speak with your unique brand soul to bridge the gap to sales." />
+              <ProcessStep isVisible={block2Visible} index={3} step="04" title="Live Scale" icon={<BarChart3 size={28} />} desc="Expand what works through real-time, transparent growth analytics." />
             </div>
           </div>
         </div>
