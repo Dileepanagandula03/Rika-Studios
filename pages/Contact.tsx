@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#E91E63] mb-8 shadow-xl border border-rose-50 group-hover:scale-110 transition-transform duration-500">
                  <Heart size={28} fill="#E91E63" />
                </div>
-               <h1 className="text-4xl md:text-5xl font-serif text-[#2D3134] leading-[1.1] mb-6">
+               <h1 className="text-4xl md:text-5xl font-bold text-[#2D3134] leading-[1.1] mb-6">
                  Cultivating <span className="italic text-[#E91E63]">Growth</span> <br /> with Intent.
                </h1>
                <p className="text-gray-500 font-light leading-relaxed">
@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
           <div className="lg:w-2/3 bg-white/80 backdrop-blur-md rounded-[50px] p-10 md:p-16 shadow-2xl border border-white">
             <div className="mb-10">
                <span className="text-[#E91E63] text-[10px] uppercase tracking-[10px] font-black mb-2 block">Connect</span>
-               <h2 className="text-3xl font-serif text-gray-900">Start the Bloom.</h2>
+               <h2 className="text-3xl font-bold text-gray-900">Start the Bloom.</h2>
             </div>
             
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
@@ -118,7 +118,7 @@ const Contact: React.FC = () => {
         </div>
         
         <div className="mt-24 text-center">
-           <span className="font-signature text-4xl text-gray-900/10">Bespoke By Rika</span>
+           <span className="italic font-medium text-4xl text-gray-900/10">Bespoke By Rika</span>
         </div>
       </div>
     </div>

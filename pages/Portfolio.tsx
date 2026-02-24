@@ -1,5 +1,5 @@
+
 import React, { useState, useEffect } from 'react';
-// Added missing Link import from react-router-dom
 import { Link } from 'react-router-dom';
 import { ArrowRight, Maximize2, Share2, Info, Sparkles } from 'lucide-react';
 
@@ -73,10 +73,10 @@ const Portfolio: React.FC = () => {
             className="relative w-full aspect-[3/4] md:aspect-square group transition-transform duration-500"
             style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
           >
-            {/* Subject Image (A placeholder representing a high-fashion, high-energy professional figure) */}
+            {/* Subject Image Updated to your provided portrait */}
             <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200" 
-              alt="Dynamic Strategy" 
+              src="https://storage.googleapis.com/static.aistudio.google.com/content/file-1.png" 
+              alt="Strategic Vision" 
               className="w-full h-full object-contain mix-blend-multiply drop-shadow-[0_35px_35px_rgba(233,30,99,0.3)]"
             />
             

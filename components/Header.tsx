@@ -155,7 +155,7 @@ const Header: React.FC = () => {
             <div key={link.name} className="flex flex-col">
               <Link 
                 to={link.path} 
-                className="text-3xl font-serif font-black text-[#2D3134] py-6 border-b border-gray-100 flex items-center justify-between group"
+                className="text-3xl font-bold text-[#2D3134] py-6 border-b border-gray-100 flex items-center justify-between group"
                 onClick={() => !link.isDropdown && setIsOpen(false)}
               >
                 {link.name}

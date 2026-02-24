@@ -76,13 +76,13 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-[8px] uppercase tracking-[3px] font-black">
           <p className="order-2 md:order-1 mt-6 md:mt-0">© 2026 Rika Gayar Studios. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 order-1 md:order-2">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span className="opacity-20 hidden md:inline">·</span>
-            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
+            <Link to="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
             <span className="opacity-20 hidden md:inline">·</span>
-            <a href="#" className="hover:text-white transition-colors">Accessibility</a>
+            <Link to="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
             <span className="opacity-20 hidden md:inline">·</span>
-            <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+            <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

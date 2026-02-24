@@ -13,7 +13,7 @@ const CaseStudyDetail: React.FC = () => {
 
         {/* Hero Section */}
         <div className="max-w-5xl mb-24">
-          <h1 className="text-5xl md:text-8xl font-serif text-[#2D3134] leading-[0.9] mb-10">
+          <h1 className="text-5xl md:text-8xl font-bold text-[#2D3134] leading-[0.9] mb-10">
             The Flora <br />
             <span className="italic text-[#E91E63]">Legacy.</span>
           </h1>
@@ -37,7 +37,7 @@ const CaseStudyDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-40">
            <div className="lg:col-span-5">
               <span className="text-[#E91E63] text-[10px] uppercase tracking-[8px] font-black block mb-6">The Stagnation</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-[#2D3134] leading-tight mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2D3134] leading-tight mb-8">
                 A decade of silence <br /> in a digital-first world.
               </h2>
               <p className="text-gray-600 font-light leading-relaxed text-lg">
@@ -65,28 +65,28 @@ const CaseStudyDetail: React.FC = () => {
            
            <div className="relative z-10 max-w-4xl">
               <span className="text-[#E91E63] text-[10px] uppercase tracking-[10px] font-black block mb-8">RGS Ecosystem Implementation</span>
-              <h2 className="text-4xl md:text-6xl font-serif mb-16 leading-tight">
+              <h2 className="text-4xl md:text-6xl font-bold mb-16 leading-tight">
                 Architecting <span className="italic text-[#E91E63]">Human-Led</span> <br /> Automation.
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                  <div className="space-y-6">
                     <Search className="text-[#E91E63]" size={32} />
-                    <h3 className="text-xl font-serif">Semantic Authority</h3>
+                    <h3 className="text-xl font-bold">Semantic Authority</h3>
                     <p className="text-white/50 text-sm font-light leading-relaxed">
                       We mapped 5,000+ intent-driven botanical keywords, ensuring Flora Legacy became the undisputed answer for "Luxury Botanical Artistry."
                     </p>
                  </div>
                  <div className="space-y-6">
                     <Waves className="text-[#E91E63]" size={32} />
-                    <h3 className="text-xl font-serif">Authored Trust</h3>
+                    <h3 className="text-xl font-bold">Authored Trust</h3>
                     <p className="text-white/50 text-sm font-light leading-relaxed">
                       A cinematic conversion environment was built to mirror the physical scent and feel of the studio, inducing immediate buyer trust.
                     </p>
                  </div>
                  <div className="space-y-6">
                     <Cpu className="text-[#E91E63]" size={32} />
-                    <h3 className="text-xl font-serif">Human-AI Nurture</h3>
+                    <h3 className="text-xl font-bold">Human-AI Nurture</h3>
                     <p className="text-white/50 text-sm font-light leading-relaxed">
                       Custom AI Growth Agents were trained on the founder’s 30 years of expertise to provide 24/7 bespoke consultation to high-net-worth clients.
                     </p>
@@ -99,7 +99,7 @@ const CaseStudyDetail: React.FC = () => {
         <div className="mb-40">
            <div className="text-center mb-20">
               <span className="text-[#E91E63] text-[10px] uppercase tracking-[10px] font-black block mb-6">Outcome</span>
-              <h2 className="text-4xl md:text-6xl font-serif text-[#2D3134]">Quantifiable Evolution.</h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-[#2D3134]">Quantifiable Evolution.</h2>
            </div>
            
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -112,7 +112,7 @@ const CaseStudyDetail: React.FC = () => {
                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-[#E91E63] mx-auto mb-8 shadow-md">
                       {stat.icon}
                    </div>
-                   <span className="text-5xl font-serif text-[#2D3134] block mb-4">{stat.value}</span>
+                   <span className="text-5xl font-bold text-[#2D3134] block mb-4">{stat.value}</span>
                    <span className="text-[10px] uppercase tracking-[4px] font-black text-gray-400">{stat.label}</span>
                 </div>
               ))}
@@ -121,7 +121,7 @@ const CaseStudyDetail: React.FC = () => {
 
         {/* CTA */}
         <div className="bg-[#F7F6F2] rounded-[60px] p-12 md:p-24 text-center">
-           <h3 className="text-3xl md:text-5xl font-serif text-[#2D3134] mb-10 leading-tight">
+           <h3 className="text-3xl md:text-5xl font-bold text-[#2D3134] mb-10 leading-tight">
              Want a similar <br /> <span className="text-[#E91E63]">Revamp?</span>
            </h3>
            <Link to="/contact" className="inline-flex items-center gap-4 bg-[#2D3134] text-white px-16 py-6 rounded-full text-[11px] uppercase font-black tracking-[5px] hover:bg-[#E91E63] transition-all shadow-xl">

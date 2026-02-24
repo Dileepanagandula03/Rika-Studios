@@ -24,7 +24,7 @@ const ServiceDetail: React.FC = () => {
         </Link>
 
         <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-serif text-gray-900 mb-8">{service.title}</h1>
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8">{service.title}</h1>
           <p className="text-2xl text-gray-600 leading-relaxed font-light mb-12">
             {service.fullDescription}
           </p>
@@ -36,7 +36,7 @@ const ServiceDetail: React.FC = () => {
               <img src={`https://picsum.photos/seed/${service.id}detail/1200/800`} alt={service.title} className="w-full h-auto" />
             </div>
             
-            <h3 className="text-3xl font-serif mb-8">How We Implement It</h3>
+            <h3 className="text-3xl font-bold mb-8">How We Implement It</h3>
             <div className="space-y-8">
               <div className="bg-white p-8 rounded-3xl border border-indigo-50 shadow-sm">
                 <h4 className="text-xl font-bold mb-4">1. Strategy & Discovery</h4>
@@ -56,7 +56,7 @@ const ServiceDetail: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="sticky top-32 space-y-8">
               <div className="bg-indigo-700 text-white p-10 rounded-[40px] shadow-xl">
-                <h3 className="text-2xl font-serif mb-6">Service Benefits</h3>
+                <h3 className="text-2xl font-bold mb-6">Service Benefits</h3>
                 <ul className="space-y-4">
                   {service.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-3">
@@ -80,7 +80,7 @@ const ServiceDetail: React.FC = () => {
 
         {/* Other Services */}
         <div className="border-t border-indigo-100 pt-24">
-          <h3 className="text-3xl font-serif text-gray-900 mb-12 text-center">Explore Other Systems</h3>
+          <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">Explore Other Systems</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {SERVICES.filter(s => s.id !== service.id).slice(0, 3).map(other => (
               <Link key={other.id} to={`/services/${other.id}`} className="group p-8 bg-white rounded-[30px] border border-indigo-50 shadow-sm hover:shadow-lg transition-all">

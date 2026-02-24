@@ -11,6 +11,10 @@ import CaseStudyDetail from './pages/portfolio/CaseStudyDetail';
 import Contact from './pages/Contact';
 import ServicesOverview from './pages/services/ServicesOverview';
 import ServiceDetail from './pages/services/ServiceDetail';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import Accessibility from './pages/Accessibility';
+import CookiePolicy from './pages/CookiePolicy';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -40,6 +44,10 @@ const App: React.FC = () => {
             <Route path="/portfolio/case-studies/:id" element={<CaseStudyDetail />} />
             
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/accessibility" element={<Accessibility />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
             
             {/* Services routes */}
             <Route path="/services" element={<ServicesOverview />} />

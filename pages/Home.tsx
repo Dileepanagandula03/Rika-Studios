@@ -59,11 +59,11 @@ const ProcessStep: React.FC<{
         <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-[#E91E63] shadow-sm border border-gray-100 transition-all group-hover:shadow-md group-hover:-translate-y-1">
           {icon}
         </div>
-        <span className="absolute -top-3 -left-3 text-[10px] font-black tracking-widest text-gray-300 uppercase font-serif italic">
+        <span className="absolute -top-3 -left-3 text-[10px] font-black tracking-widest text-gray-300 uppercase italic">
           {step}
         </span>
       </div>
-      <h4 className="text-2xl font-serif text-[#2D3134] mb-3 tracking-tight">{title}</h4>
+      <h4 className="text-2xl font-bold text-[#2D3134] mb-3 tracking-tight">{title}</h4>
       <p className="text-gray-500 text-[14px] font-light leading-relaxed max-w-[260px]">
         {desc}
       </p>
@@ -182,7 +182,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
           <div className="max-w-5xl">
             <span className="block text-gray-500 text-[10px] uppercase tracking-[10px] font-black mb-6">2026 Edition</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#2D3134] leading-[1.1] mb-8 tracking-tighter">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2D3134] leading-[1.1] mb-8 tracking-tighter">
               Growth Infrastructure <br /> for the <span className="italic text-[#E91E63]">Human Era.</span>
             </h1>
             <p className="text-base md:text-lg text-[#2D3134] font-medium leading-relaxed mb-12 max-w-2xl mx-auto drop-shadow-sm">
@@ -207,7 +207,7 @@ const Home: React.FC = () => {
             <div className={`lg:w-5/12 transition-all duration-[1000ms] transform ${block2Visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
               <span className="text-[#E91E63] text-[10px] uppercase tracking-[12px] font-black block mb-8">Our Methodology</span>
               <div className="relative inline-block mb-10">
-                <h2 className="text-4xl md:text-6xl font-serif text-[#2D3134] leading-[1.05] relative z-10">
+                <h2 className="text-4xl md:text-6xl font-bold text-[#2D3134] leading-[1.05] relative z-10">
                   How we replace <br />
                   <span className="italic text-[#E91E63]">robotic noise</span> <br />
                   with human intent.
@@ -246,8 +246,42 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* NEW: FOUNDER'S VISION SECTION */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center gap-16 lg:gap-32">
+            <div className="md:w-1/2 relative">
+               <div className="aspect-[4/5] md:aspect-square bg-gray-50 rounded-[80px] overflow-hidden shadow-2xl relative">
+                  <img 
+                    src="https://images.pexels.com/photos/35267956/pexels-photo-35267956.jpeg" 
+                    alt="Nyhavn - Strategic Environments" 
+                    className="w-full h-full object-cover transition-transform duration-[3s] hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
+               </div>
+               <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#E91E63] rounded-full flex items-center justify-center p-8 text-white shadow-xl rotate-12">
+                  <Sparkles size={40} className="animate-pulse" />
+               </div>
+            </div>
+            <div className="md:w-1/2">
+               <span className="text-[#E91E63] text-[10px] uppercase tracking-[10px] font-black block mb-8">From the Director</span>
+               <h2 className="text-4xl md:text-6xl font-bold text-[#2D3134] mb-10 leading-tight">
+                 "In a world of <br /> automation, <br /> <span className="italic text-[#E91E63]">Human Intent</span> <br /> is the ultimate moat."
+               </h2>
+               <p className="text-gray-600 text-lg font-light leading-relaxed mb-10 max-w-lg">
+                 My vision for Rika Gayar Studios was simple: build digital environments where brands don't just exist—they lead. We focus on the silent authority of trust and the precise intelligence of growth.
+               </p>
+               <div className="flex flex-col gap-2">
+                  <span className="italic font-medium text-4xl text-[#2D3134]">Dileep</span>
+                  <span className="text-[10px] uppercase tracking-[5px] font-black text-gray-400">Founder & Strategic Director</span>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* BLOCK 3: SERVICES */}
-      <section className="py-32 relative overflow-hidden bg-white">
+      <section className="py-32 relative overflow-hidden bg-[#FFFBF0]">
         <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
           <div className="absolute top-[-10%] left-[-5%] w-[60%] h-[70%] bg-sky-200/50 rounded-full blur-[120px]"></div>
           <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[80%] bg-rose-200/50 rounded-full blur-[140px]"></div>
@@ -256,7 +290,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-24">
             <span className="inline-block text-[#E91E63] text-[10px] uppercase tracking-[20px] font-black mb-6">Expertise</span>
-            <h2 className="text-4xl md:text-6xl font-serif text-[#2D3134]">Six Core Systems.</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#2D3134]">Six Core Systems.</h2>
             <div className="w-12 h-1 bg-[#E91E63]/20 mx-auto mt-6"></div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-4 md:gap-x-8 gap-y-20">
@@ -275,11 +309,11 @@ const Home: React.FC = () => {
                    <div className="relative">
                       <Quote size={80} className="text-[#E91E63]/10 absolute -top-12 -left-8" />
                       <div className={`transition-all duration-700 ease-out transform ${fade ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-                        <p className="text-2xl md:text-4xl font-serif text-[#2D3134] leading-snug italic mb-10">
+                        <p className="text-2xl md:text-4xl font-bold text-[#2D3134] leading-snug italic mb-10">
                           "{TESTIMONIALS[testimonialIndex].quote}"
                         </p>
                         <div className="flex flex-col">
-                           <span className="font-signature text-3xl text-[#E91E63] mb-1 drop-shadow-sm">{TESTIMONIALS[testimonialIndex].signature}</span>
+                           <span className="italic font-medium text-3xl text-[#E91E63] mb-1 drop-shadow-sm">{TESTIMONIALS[testimonialIndex].signature}</span>
                            <span className="text-[10px] uppercase tracking-[4px] font-black text-[#2D3134]/60">
                              {TESTIMONIALS[testimonialIndex].author} — {TESTIMONIALS[testimonialIndex].role}
                            </span>
@@ -307,7 +341,7 @@ const Home: React.FC = () => {
            <div className="flex justify-center mb-10">
               <Heart size={32} fill="#E91E63" className="text-[#E91E63] animate-float" />
            </div>
-           <h2 className="text-3xl md:text-5xl font-serif text-[#2D3134] mb-10 italic leading-tight">
+           <h2 className="text-3xl md:text-5xl font-bold text-[#2D3134] mb-10 italic leading-tight">
              Ready to start your <br /> <span className="text-[#E91E63]">Authority Build?</span>
            </h2>
            <p className="text-gray-500 mb-12 max-w-md mx-auto font-light leading-relaxed">
@@ -317,7 +351,7 @@ const Home: React.FC = () => {
              Start Evaluation <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
            </Link>
            <div className="mt-20 flex flex-col items-center">
-              <span className="font-signature text-5xl text-[#2D3134]/20">Rika Gayar</span>
+              <span className="italic font-medium text-5xl text-[#2D3134]/20">Rika Gayar</span>
            </div>
         </div>
       </section>

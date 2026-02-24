@@ -9,7 +9,7 @@ const ServicesOverview: React.FC = () => {
     <div className="pt-32 pb-24">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-20">
-          <h1 className="text-5xl md:text-6xl font-serif text-gray-900 mb-8">Scalable <span className="text-indigo-700 italic">Systems</span> for Ambitious Brands.</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">Scalable <span className="text-indigo-700 italic">Systems</span> for Ambitious Brands.</h1>
           <p className="text-xl text-gray-600 leading-relaxed font-light">
             We don't do "one-off" tasks. We build interconnected growth frameworks that ensure your brand is seen, trusted, and chosen.
           </p>
@@ -27,13 +27,13 @@ const ServicesOverview: React.FC = () => {
                       className="w-full h-full object-cover rounded-[40px]"
                     />
                   </div>
-                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-700 rounded-full flex items-center justify-center text-white text-4xl font-serif italic shadow-xl">
+                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-700 rounded-full flex items-center justify-center text-white text-4xl font-bold italic shadow-xl">
                     0{index + 1}
                   </div>
                 </div>
               </div>
               <div className="lg:w-1/2">
-                <h2 className="text-4xl font-serif text-gray-900 mb-6">{service.title}</h2>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">{service.title}</h2>
                 <p className="text-gray-600 text-lg mb-8 leading-relaxed">
                   {service.fullDescription}
                 </p>

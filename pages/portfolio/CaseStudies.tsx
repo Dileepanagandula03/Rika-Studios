@@ -21,7 +21,7 @@ const CaseStudies: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mb-24">
           <span className="text-[#E91E63] text-[10px] uppercase tracking-[10px] font-black block mb-6">Case Studies</span>
-          <h1 className="text-5xl md:text-7xl font-serif text-[#2D3134] leading-tight mb-8">
+          <h1 className="text-5xl md:text-7xl font-bold text-[#2D3134] leading-tight mb-8">
             Proof of <span className="italic">Evolution.</span>
           </h1>
           <p className="text-xl text-[#2D3134]/60 font-light leading-relaxed max-w-2xl">
@@ -47,7 +47,7 @@ const CaseStudies: React.FC = () => {
                       <Clock size={16} className="text-[#E91E63]" />
                       <span className="text-[10px] uppercase tracking-[4px] font-black text-gray-400">Project: {study.category}</span>
                    </div>
-                   <h2 className="text-4xl md:text-5xl font-serif text-[#2D3134] mb-6 leading-tight group-hover:text-[#E91E63] transition-colors">
+                   <h2 className="text-4xl md:text-5xl font-bold text-[#2D3134] mb-6 leading-tight group-hover:text-[#E91E63] transition-colors">
                      {study.title}
                    </h2>
                    <p className="text-[#2D3134]/70 text-lg font-light leading-relaxed mb-10">
@@ -57,11 +57,11 @@ const CaseStudies: React.FC = () => {
                    <div className="grid grid-cols-2 gap-8 mb-12">
                       <div className="border-l-2 border-[#E91E63]/20 pl-6">
                          <span className="text-[10px] uppercase tracking-[3px] font-black text-gray-400 block mb-1">Impact</span>
-                         <span className="text-2xl font-serif text-[#2D3134]">{study.stat}</span>
+                         <span className="text-2xl font-bold text-[#2D3134]">{study.stat}</span>
                       </div>
                       <div className="border-l-2 border-[#E91E63]/20 pl-6">
                          <span className="text-[10px] uppercase tracking-[3px] font-black text-gray-400 block mb-1">Status</span>
-                         <span className="text-2xl font-serif text-[#2D3134]">Live Scale</span>
+                         <span className="text-2xl font-bold text-[#2D3134]">Live Scale</span>
                       </div>
                    </div>
 
