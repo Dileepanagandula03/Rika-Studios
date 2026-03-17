@@ -1,125 +1,198 @@
 
 import React from 'react';
-import { Mail, Phone, Instagram, Linkedin, Sparkles, Send, Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Send as Telegram, Sparkles } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
-    <div className="relative min-h-screen pt-40 pb-32 overflow-hidden bg-[#F9F9F9]">
-      {/* FLORAL GEOMETRIC BACKGROUND - Reverted to previous version keeping visuals */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#FFF5F8] to-[#F3F4F6]"></div>
-        <div className="absolute top-[10%] left-[-5%] w-[300px] h-[300px] border-[12px] border-white rounded-full shadow-2xl opacity-60 animate-float" style={{ animationDuration: '10s' }}></div>
-        <div className="absolute top-[40%] left-[20%] w-[150px] h-[150px] border-[8px] border-white rounded-full shadow-xl opacity-40 animate-float" style={{ animationDuration: '14s', animationDelay: '2s' }}></div>
-        <div className="absolute bottom-[20%] left-[10%] w-[400px] h-[400px] border-[15px] border-white rounded-full shadow-inner opacity-30"></div>
-        <div className="absolute top-[5%] right-[5%] w-[250px] h-[250px] border-[10px] border-white rounded-full shadow-2xl opacity-50 animate-float" style={{ animationDuration: '12s', animationDelay: '1s' }}></div>
-        <div className="absolute bottom-[-10%] right-[15%] w-[350px] h-[350px] border-[20px] border-white rounded-full shadow-2xl opacity-40"></div>
-
-        <div className="absolute top-[15%] left-[5%] w-64 h-64 opacity-60 blur-[1px] transform -rotate-12">
-          <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?auto=format&fit=crop&q=80&w=800" alt="Rose Accent" className="w-full h-full object-contain rounded-full shadow-2xl" />
-        </div>
-        <div className="absolute bottom-[10%] right-[5%] w-80 h-80 opacity-40 blur-[2px] transform rotate-45">
-           <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&q=80&w=800" alt="Rose Accent" className="w-full h-full object-contain rounded-full" />
-        </div>
+    <div className="min-h-screen relative overflow-hidden pt-32 pb-24 bg-[#F7F9FC]">
+      {/* 2026 FUTURISTIC BACKGROUND ELEMENTS */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Mesh/Grid Texture */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#4F46E5 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+        
+        {/* Floating Gradient Orbs */}
+        <motion.div 
+          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[10%] left-[10%] w-[400px] h-[400px] rounded-full blur-[120px] opacity-20 bg-blue-400"
+        ></motion.div>
+        <motion.div 
+          animate={{ x: [0, -40, 0], y: [0, 60, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] rounded-full blur-[150px] opacity-20 bg-purple-400"
+        ></motion.div>
+        <motion.div 
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[40%] left-[40%] w-[300px] h-[300px] rounded-full blur-[100px] opacity-10 bg-silver-400 bg-gray-300"
+        ></motion.div>
       </div>
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12">
-          
-          {/* Left Column: Context Card */}
-          <div className="lg:w-1/3 bg-white/40 backdrop-blur-2xl rounded-[50px] p-10 md:p-12 border border-white/60 shadow-xl flex flex-col group">
-            <div className="mb-8">
-               <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#E91E63] mb-8 shadow-xl border border-rose-50 group-hover:scale-110 transition-transform duration-500">
-                 <Heart size={28} fill="#E91E63" />
-               </div>
-               <h1 className="text-4xl md:text-5xl font-bold text-[#2D3134] leading-[1.1] mb-6">
-                 Cultivating <span className="italic text-[#E91E63]">Growth</span> <br /> with Intent.
-               </h1>
-               <p className="text-gray-500 font-light leading-relaxed">
-                 Like a garden, growth requires a high-trust environment. Let's design yours today.
-               </p>
-            </div>
-            
-            <div className="space-y-8 mt-auto pt-8 border-t border-gray-100">
-              <div className="group/item cursor-pointer">
-                <p className="text-[9px] uppercase tracking-[4px] text-[#E91E63] font-black mb-2">Electronic Mail</p>
-                <a href="mailto:hello@rikagayar.studios" className="text-[#2D3134] text-sm font-medium hover:text-[#E91E63] transition-colors">hello@rikagayar.studios</a>
-              </div>
-              <div className="flex gap-6 pt-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover:text-[#E91E63] transition-all">
-                  <Instagram size={18} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover:text-[#E91E63] transition-all">
-                  <Linkedin size={18} />
-                </a>
-              </div>
-            </div>
-          </div>
+        
+        {/* Hero Section */}
+        <div className="text-center mb-20">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-[36px] font-bold text-[#111827] mb-6 tracking-tight"
+            style={{ textShadow: '0 0 20px rgba(79, 70, 229, 0.1)' }}
+          >
+            Contact Us
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-gray-500 text-[14px] font-light max-w-2xl mx-auto"
+          >
+            Let’s build something smart, scalable, and meaningful together.
+          </motion.p>
+        </div>
 
-          {/* Right Column: Clean Form */}
-          <div className="lg:w-2/3 bg-white/80 backdrop-blur-md rounded-[50px] p-10 md:p-16 shadow-2xl border border-white">
-            <div className="mb-10">
-               <span className="text-[#E91E63] text-[10px] uppercase tracking-[10px] font-black mb-2 block">Connect</span>
-               <h2 className="text-3xl font-bold text-gray-900">Start the Bloom.</h2>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
+          
+          {/* Left Column: Get in Touch (Glassmorphism) */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            whileHover={{ y: -5 }}
+            className="lg:col-span-5 rounded-[20px] p-10 relative overflow-hidden transition-all duration-500"
+            style={{ 
+              background: 'rgba(255, 255, 255, 0.65)',
+              backdropFilter: 'blur(18px)',
+              border: '1px solid rgba(255, 255, 255, 0.4)',
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5)'
+            }}
+          >
+            <h3 className="text-[18px] font-bold text-[#111827] mb-8 tracking-tight">Get in Touch</h3>
             
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-8">
+              <div className="flex items-center gap-5 group">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-[#111827] shrink-0 shadow-sm transition-transform group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #F0F4FF 0%, #E0E7FF 100%)' }}>
+                  <Mail size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[3px] text-[#111827] font-black mb-1 opacity-80">Electronic Mail</p>
+                  <a href="mailto:hello@rikagayar.studios" className="text-[#111827] text-base font-medium hover:text-blue-600 transition-colors">
+                    hello@rikagayar.studios
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-5 group">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-[#111827] shrink-0 shadow-sm transition-transform group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #F0F4FF 0%, #E0E7FF 100%)' }}>
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[3px] text-[#111827] font-black mb-1 opacity-80">Voice Line</p>
+                  <a href="tel:+13018524988" className="text-[#111827] text-base font-medium hover:text-blue-600 transition-colors">
+                    +1 (301) 852-4988
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-5 group">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-[#111827] shrink-0 shadow-sm transition-transform group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #F0F4FF 0%, #E0E7FF 100%)' }}>
+                  <MapPin size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[3px] text-[#111827] font-black mb-1 opacity-80">HQ Location</p>
+                  <p className="text-[#111827] text-base font-medium">Maryland, USA</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-16 pt-10 border-t border-white/40">
+              <div className="flex items-center gap-3 text-gray-400">
+                <Sparkles size={16} className="text-[#111827] animate-pulse" />
+                <span className="text-xs font-medium tracking-wider uppercase opacity-60">Future Ready Infrastructure</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Contact Form (Glassmorphism) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            className="lg:col-span-7 rounded-[20px] p-10 relative overflow-hidden"
+            style={{ 
+              background: 'rgba(255, 255, 255, 0.65)',
+              backdropFilter: 'blur(18px)',
+              border: '1px solid rgba(255, 255, 255, 0.4)',
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5)'
+            }}
+          >
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[3px] text-gray-400 font-black ml-1">Full Name</label>
+                  <label className="text-[11px] font-bold text-gray-400 ml-1 uppercase tracking-widest">Full Name</label>
                   <input 
                     type="text" 
                     placeholder="Julian Thorne"
-                    className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-gray-800 placeholder-gray-300 focus:ring-4 focus:ring-[#E91E63]/5 focus:border-[#E91E63]/20 outline-none transition-all"
+                    className="w-full bg-white/40 border border-white/60 rounded-xl px-6 py-4 text-[#111827] text-[14px] placeholder-gray-400 focus:bg-white/80 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500/30 outline-none transition-all shadow-inner"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[3px] text-gray-400 font-black ml-1">Business Name</label>
+                  <label className="text-[11px] font-bold text-gray-400 ml-1 uppercase tracking-widest">Email Address</label>
                   <input 
-                    type="text" 
-                    placeholder="Lumina Co."
-                    className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-gray-800 placeholder-gray-300 focus:ring-4 focus:ring-[#E91E63]/5 focus:border-[#E91E63]/20 outline-none transition-all"
+                    type="email" 
+                    placeholder="name@company.com"
+                    className="w-full bg-white/40 border border-white/60 rounded-xl px-6 py-4 text-[#111827] text-[14px] placeholder-gray-400 focus:bg-white/80 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500/30 outline-none transition-all shadow-inner"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-[9px] uppercase tracking-[3px] text-gray-400 font-black ml-1">Email Address</label>
-                <input 
-                  type="email" 
-                  placeholder="name@company.com"
-                  className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-gray-800 placeholder-gray-300 focus:ring-4 focus:ring-[#E91E63]/5 focus:border-[#E91E63]/20 outline-none transition-all"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[9px] uppercase tracking-[3px] text-gray-400 font-black ml-1">Your Vision</label>
+                <label className="text-[11px] font-bold text-gray-400 ml-1 uppercase tracking-widest">Your Message</label>
                 <textarea 
-                  rows={4} 
-                  placeholder="Tell us about the systems you're dreaming of..."
-                  className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-gray-800 placeholder-gray-300 focus:ring-4 focus:ring-[#E91E63]/5 focus:border-[#E91E63]/20 outline-none transition-all resize-none"
+                  rows={6} 
+                  placeholder="Tell us about your next big idea..."
+                  className="w-full bg-white/40 border border-white/60 rounded-xl px-6 py-4 text-[#111827] text-[14px] placeholder-gray-400 focus:bg-white/80 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500/30 outline-none transition-all resize-none shadow-inner"
                 ></textarea>
               </div>
 
-              <div className="flex items-center justify-between pt-4">
-                <div className="hidden sm:flex items-center gap-2 text-gray-400">
-                   <Sparkles size={14} className="text-[#E91E63]" />
-                   <p className="text-[9px] font-medium italic">High-trust priority responses within 12h.</p>
-                </div>
-                <button 
-                  type="submit" 
-                  className="group relative flex items-center gap-3 bg-[#2D3134] text-white px-12 py-5 rounded-full text-[10px] uppercase font-black tracking-[4px] hover:bg-[#E91E63] transition-all shadow-xl hover:scale-105 active:scale-95"
-                >
-                  Initiate Growth <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </button>
-              </div>
+              <motion.button 
+                whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(37, 99, 235, 0.3)' }}
+                whileTap={{ scale: 0.98 }}
+                type="submit" 
+                className="w-full md:w-auto bg-gradient-to-r from-[#111827] to-[#1F2937] text-white px-12 py-5 rounded-full text-xs font-black uppercase tracking-[4px] shadow-xl flex items-center justify-center gap-4 group"
+              >
+                Send Message <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </motion.button>
             </form>
+          </motion.div>
+        </div>
+
+        {/* Follow Us Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-24 text-center"
+        >
+          <h4 className="text-[11px] uppercase tracking-[6px] text-gray-400 font-black mb-10 opacity-60">Digital Presence</h4>
+          <div className="flex justify-center gap-8">
+            {[
+              { icon: <Linkedin size={22} />, label: 'LinkedIn' },
+              { icon: <Twitter size={22} />, label: 'Twitter' },
+              { icon: <Telegram size={22} />, label: 'Telegram' }
+            ].map((social, i) => (
+              <motion.a 
+                key={i}
+                href="#" 
+                whileHover={{ y: -5, scale: 1.1 }}
+                className="w-16 h-16 rounded-2xl bg-white/50 backdrop-blur-md shadow-sm border border-white/60 flex items-center justify-center text-gray-400 hover:text-blue-600 hover:shadow-lg transition-all"
+              >
+                {social.icon}
+              </motion.a>
+            ))}
           </div>
-          
-        </div>
-        
-        <div className="mt-24 text-center">
-           <span className="italic font-medium text-4xl text-gray-900/10">Bespoke By Rika</span>
-        </div>
+        </motion.div>
+
       </div>
     </div>
   );

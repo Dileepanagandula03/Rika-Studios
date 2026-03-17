@@ -3,52 +3,36 @@ import { ServiceItem, PortfolioItem } from './types';
 
 export const SERVICES: ServiceItem[] = [
   {
+    id: 'cold-email',
+    title: 'Cold Email Marketing',
+    description: 'Direct, high-intent outreach that actually gets replies.',
+    icon: 'mail',
+    fullDescription: 'We design and execute cold email campaigns that bypass the noise. Our systems focus on deliverability, personalization, and high-quality lead conversion.',
+    benefits: ['Deliverability Optimization', 'Personalized Copywriting', 'Automated Follow-ups', 'Lead Qualification']
+  },
+  {
     id: 'lead-generation',
-    title: 'Lead Generation & Paid Growth',
-    description: 'We don’t run ads. We design predictable demand engines.',
+    title: 'Lead Generation',
+    description: 'Predictable demand engines built for scale.',
     icon: 'target',
-    fullDescription: 'Multi-channel acquisition built on buyer psychology, not platform tricks. We architect high-intent pipelines that prioritize revenue over vanity metrics.',
-    benefits: ['Paid Acquisition Strategy', 'Strategic Partnerships', 'High-Intent Funnel Mapping', 'Data Feedback Loops']
+    fullDescription: 'Multi-channel acquisition built on buyer psychology. We architect high-intent pipelines that prioritize revenue over vanity metrics.',
+    benefits: ['High-Intent Funnel Mapping', 'Strategic Partnerships', 'Data Feedback Loops', 'Conversion Optimization']
   },
   {
-    id: 'website-experiences',
-    title: 'Website & Portfolio Experiences',
-    description: 'Your website is not a brochure. It is a living authority asset.',
-    icon: 'layout',
-    fullDescription: 'We build trust-first digital homes engineered to convert at every scroll depth. These are environments designed to handle the complexity of modern buyer journeys.',
-    benefits: ['UX Infrastructure Strategy', 'Behavioral Design', 'Messaging Clarity', 'Authority Positioning']
-  },
-  {
-    id: 'content-systems',
-    title: 'Engagement Driven Content Systems',
-    description: 'Content that attracts is common. Content that moves buyers is rare.',
-    icon: 'message-circle',
-    fullDescription: 'We build brand narratives that turn fleeting attention into long-term loyalty and inbound demand through systematic storytelling.',
-    benefits: ['Short-form + Long-form Synergy', 'Founder Positioning', 'SEO Authority Content', 'Trust-Based Storytelling']
-  },
-  {
-    id: 'seo-authority',
-    title: 'SEO & Authority Building',
-    description: 'Visibility is not about keywords. It’s about owning conversations.',
-    icon: 'search',
-    fullDescription: 'We build semantic networks around your brand that ensure you are the first and final answer for your customers, creating compound traffic growth.',
-    benefits: ['Search Intent Mapping', 'Topical Authority Clusters', 'Compounding Traffic Systems', 'Niche Dominance Strategy']
-  },
-  {
-    id: 'ai-growth-agents',
-    title: 'AI Growth Agents',
-    description: 'AI shouldn’t replace your brand voice. It should amplify it.',
+    id: 'ai-agents',
+    title: 'AI Agents / Chatbots',
+    description: 'Intelligent automation that speaks your brand voice.',
     icon: 'cpu',
-    fullDescription: 'We build private AI systems that nurture, qualify, and convert—while sounding unmistakably like you. Intelligent automation with a human soul.',
-    benefits: ['Custom Model Voice Training', '24/7 Nurture Infrastructure', 'Multilingual Conversion', 'Human-in-the-loop Guardrails']
+    fullDescription: 'We build private AI systems that nurture, qualify, and convert—while sounding unmistakably like you. 24/7 engagement without the overhead.',
+    benefits: ['Custom Voice Training', '24/7 Nurture Infrastructure', 'Automated Qualification', 'Seamless CRM Integration']
   },
   {
-    id: 'project-tracking',
-    title: 'Real-Time Tracking & Growth',
-    description: 'Growth without visibility is chaos. We design feedback systems.',
-    icon: 'bar-chart',
-    fullDescription: 'We provide real-time feedback systems so scaling feels controlled, not overwhelming. Absolute transparency into every dollar and delivery.',
-    benefits: ['Real-Time Analytics Dashboards', 'KPI Alignment Matrix', 'Revenue Attribution Clarity', 'Strategic Roadmap Visuals']
+    id: 'website-experience',
+    title: 'Website Experience',
+    description: 'Your digital home, engineered for authority and conversion.',
+    icon: 'layout',
+    fullDescription: 'We build trust-first digital environments designed to convert at every scroll depth. High-performance websites that handle modern buyer complexity.',
+    benefits: ['UX Infrastructure Strategy', 'Behavioral Design', 'Messaging Clarity', 'Authority Positioning']
   }
 ];
 

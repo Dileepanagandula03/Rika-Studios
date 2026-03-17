@@ -38,12 +38,21 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
     { 
       name: 'Services', 
       path: '/services', 
       isDropdown: true,
       items: SERVICES.map(s => ({ name: s.title, path: `/services/${s.id}` }))
+    },
+    { 
+      name: 'Products', 
+      path: '/products', 
+      isDropdown: true,
+      items: [
+        { name: 'Email Automation Tool', path: '/products/email-automation' },
+        { name: 'AI Resume Tailoring Tool', path: '/products/ai-resume-tailoring' },
+        { name: 'AI Agent (Clawdbot)', path: '/products/clawdbot' }
+      ]
     },
     { 
       name: 'Portfolio', 
@@ -54,7 +63,8 @@ const Header: React.FC = () => {
         { name: 'Case Studies', path: '/portfolio/case-studies' }
       ]
     },
-    { name: 'Contact Us', path: '/contact' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (

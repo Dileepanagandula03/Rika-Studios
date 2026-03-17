@@ -70,25 +70,25 @@ const CaseStudyDetail: React.FC = () => {
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                 <div className="space-y-6">
+                  <div className="space-y-6">
                     <Search className="text-[#E91E63]" size={32} />
-                    <h3 className="text-xl font-bold">Semantic Authority</h3>
+                    <h3 className="text-xl font-bold">SEO & Authority</h3>
                     <p className="text-white/50 text-sm font-light leading-relaxed">
                       We mapped 5,000+ intent-driven botanical keywords, ensuring Flora Legacy became the undisputed answer for "Luxury Botanical Artistry."
                     </p>
                  </div>
                  <div className="space-y-6">
                     <Waves className="text-[#E91E63]" size={32} />
-                    <h3 className="text-xl font-bold">Authored Trust</h3>
+                    <h3 className="text-xl font-bold">Website Experience</h3>
                     <p className="text-white/50 text-sm font-light leading-relaxed">
                       A cinematic conversion environment was built to mirror the physical scent and feel of the studio, inducing immediate buyer trust.
                     </p>
                  </div>
                  <div className="space-y-6">
                     <Cpu className="text-[#E91E63]" size={32} />
-                    <h3 className="text-xl font-bold">Human-AI Nurture</h3>
+                    <h3 className="text-xl font-bold">AI Agents / Chatbots</h3>
                     <p className="text-white/50 text-sm font-light leading-relaxed">
-                      Custom AI Growth Agents were trained on the founder’s 30 years of expertise to provide 24/7 bespoke consultation to high-net-worth clients.
+                      Custom AI Agents were trained on the founder’s 30 years of expertise to provide 24/7 bespoke consultation to high-net-worth clients.
                     </p>
                  </div>
               </div>

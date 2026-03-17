@@ -32,12 +32,10 @@ const TESTIMONIALS = [
 ];
 
 const INSIGHTS: Record<string, string> = {
+  'cold-email': 'Direct outreach that gets replies.',
   'lead-generation': 'Engineered for high-intent traffic.',
-  'website-experiences': 'Your living authority asset.',
-  'content-systems': 'Turning attention into loyalty.',
-  'seo-authority': 'Owning buyer conversations.',
-  'ai-growth-agents': 'Amplifying brand voice.',
-  'project-tracking': 'Clarity through feedback loops.'
+  'ai-agents': 'Amplifying brand voice with AI.',
+  'website-experience': 'Your living authority asset.'
 };
 
 const ProcessStep: React.FC<{ 
