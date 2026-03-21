@@ -44,18 +44,20 @@ async function startServer() {
         from: "Rika Studios <onboarding@resend.dev>",
         to: [process.env.RECEIVING_EMAIL || "rikagayarstudio@gmail.com"],
         replyTo: email,
-        subject: `[#${submissionId}] New Contact Form Submission from ${name}`,
-        text: `New Message from Rika Studios Contact Form\n\nSubmission ID: #${submissionId}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`,
+        subject: `Contact Form Submission: Rika Studios`,
+        text: `New Message from Rika Studios Contact Form\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}\n\n---\nReference ID: #${submissionId}`,
         html: `
-          <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-            <h2 style="color: #111827;">New Message from Rika Studios</h2>
-            <p style="color: #6B7280; font-size: 12px;">Submission ID: #${submissionId}</p>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
+          <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #111827; margin-top: 0;">New Inquiry from ${name}</h2>
+            <div style="background: #f9fafb; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+              <p style="margin: 5px 0;"><strong>Name:</strong> ${name}</p>
+              <p style="margin: 5px 0;"><strong>Email:</strong> ${email}</p>
+              <p style="margin: 5px 0;"><strong>Phone:</strong> ${phone}</p>
+            </div>
             <p><strong>Message:</strong></p>
-            <p style="white-space: pre-wrap; color: #374151;">${message}</p>
+            <p style="white-space: pre-wrap; color: #374151; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 8px;">${message}</p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
+            <p style="color: #9CA3AF; font-size: 11px; text-align: center;">Reference ID: #${submissionId} | Rika Studios Contact System</p>
           </div>
         `,
       });

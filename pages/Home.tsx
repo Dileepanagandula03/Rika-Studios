@@ -105,16 +105,38 @@ const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number
       }}
     >
       <div className="relative mb-8">
-        <div className="absolute inset-[-60px] rounded-full blur-[80px] opacity-0 group-hover:opacity-70 transition-all duration-1000 animate-pulse bg-gradient-to-tr from-[#E91E63]/25 via-[#FFB347]/15 to-transparent pointer-events-none"></div>
-        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center border-4 border-white shadow-xl relative z-10 transition-all duration-700 group-hover:scale-105 group-hover:shadow-[0_30px_60px_-12px_rgba(233,30,99,0.3)] bg-gray-50">
-          <div className="text-[#E91E63] opacity-20 group-hover:opacity-100 transition-opacity">
+        {/* Constant background glow */}
+        <div className="absolute inset-[-30px] rounded-full blur-[50px] opacity-30 bg-gradient-to-tr from-[#E91E63]/20 via-[#FFB347]/10 to-transparent pointer-events-none animate-pulse"></div>
+        
+        {/* Rotating outer ring */}
+        <div className="absolute inset-[-10px] rounded-full border border-dashed border-[#E91E63]/30 animate-spin-slow pointer-events-none"></div>
+        
+        {/* Orbiting element */}
+        <div className="absolute inset-[-10px] animate-spin-slow pointer-events-none" style={{ animationDuration: '15s' }}>
+          <div className="w-2 h-2 rounded-full bg-[#E91E63] absolute top-0 left-1/2 -translate-x-1/2 shadow-[0_0_10px_#E91E63]"></div>
+        </div>
+        
+        {/* Main Circle */}
+        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center border-2 border-white shadow-[0_20px_40px_-10px_rgba(233,30,99,0.15)] relative z-10 transition-all duration-700 group-hover:scale-110 group-hover:shadow-[0_40px_80px_-15px_rgba(233,30,99,0.4)] bg-gradient-to-br from-white via-white to-[#FFF5F7] overflow-hidden">
+          {/* Internal subtle gradient */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#E91E63]/5 via-transparent to-[#FFB347]/5 opacity-50"></div>
+          
+          {/* Number indicator */}
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] font-black tracking-[3px] text-[#E91E63]/30 group-hover:text-[#E91E63]/60 transition-colors">
+            {String(index + 1).padStart(2, '0')}
+          </div>
+
+          {/* Icon */}
+          <div className="relative z-10 text-[#E91E63] opacity-80 group-hover:opacity-100 transition-opacity transform group-hover:scale-110 transition-transform duration-500">
             {ICON_MAP[service.icon] || <Sparkles size={40} />}
           </div>
-          <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none"></div>
+          
+          {/* Hover highlight */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#E91E63]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full pointer-events-none"></div>
         </div>
       </div>
       <div className="text-center transition-all duration-700 transform group-hover:-translate-y-2 px-2">
-        <h3 className="text-center text-[10px] md:text-[11px] font-black text-[#2D3134] mb-2 leading-tight tracking-[0.2em] h-10 flex items-center justify-center max-w-[160px] uppercase transition-colors group-hover:text-[#E91E63]">
+        <h3 className="text-center text-[11px] md:text-[13px] font-black text-[#2D3134] mb-2 leading-tight tracking-[0.15em] h-12 flex items-center justify-center max-w-[180px] uppercase transition-colors group-hover:text-[#E91E63]">
           {service.title}
         </h3>
         <p className="text-[9px] text-[#FFB347] font-medium italic opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-2 group-hover:translate-y-0 h-4 mb-4">
@@ -203,20 +225,6 @@ const Home: React.FC = () => {
                 Apply for Partnership
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TRUSTED BY SECTION */}
-      <section className="py-20 border-y border-gray-100 bg-white/50 backdrop-blur-sm relative z-20">
-        <div className="container mx-auto px-6">
-          <p className="text-[10px] uppercase tracking-[4px] text-gray-400 text-center mb-12 font-black">Trusted by industry leaders</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale">
-            <div className="text-2xl font-black tracking-tighter">TECHFLOW</div>
-            <div className="text-2xl font-black tracking-tighter">NEXUS.AI</div>
-            <div className="text-2xl font-black tracking-tighter">AURORA</div>
-            <div className="text-2xl font-black tracking-tighter">VANTAGE</div>
-            <div className="text-2xl font-black tracking-tighter">GLO.GLOBAL</div>
           </div>
         </div>
       </section>
@@ -347,7 +355,7 @@ const Home: React.FC = () => {
                 <div className="md:w-1/2 flex justify-center md:justify-end items-center">
                    <button 
                      onClick={handleNextTestimonial}
-                     className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white/90 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center text-[#2D3134] hover:bg-[#2D3134] hover:text-white transition-all duration-500 shadow-2xl active:scale-90"
+                     className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white/90 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center text-[#2D3134] hover:bg-[#E91E63] hover:text-white transition-all duration-500 shadow-2xl active:scale-90"
                    >
                       <ChevronRight size={24} />
                    </button>
@@ -377,6 +385,17 @@ const Home: React.FC = () => {
            </div>
         </div>
       </section>
+
+      {/* Custom Styles for Animations */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+      `}} />
     </div>
   );
 };

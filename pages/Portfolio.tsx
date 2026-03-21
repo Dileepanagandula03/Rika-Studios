@@ -20,11 +20,11 @@ const Portfolio: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F0E6E6] text-[#1a1a1a] pt-32 pb-24 overflow-hidden relative">
+    <div className="min-h-screen bg-[#FFF5F7] text-[#1a1a1a] pt-32 pb-24 overflow-hidden relative">
       {/* Background Large Text (Editorial) */}
       <div className="absolute inset-0 flex items-center justify-center z-0 select-none pointer-events-none">
         <h1 
-          className="text-[35vw] font-black text-white leading-none tracking-tighter transition-transform duration-300 ease-out opacity-50"
+          className="text-[35vw] font-black text-pink-200 leading-none tracking-tighter transition-transform duration-300 ease-out opacity-40"
           style={{ transform: `translate(${mousePosition.x * -0.5}px, ${mousePosition.y * -0.5}px)` }}
         >
           rika
@@ -34,11 +34,11 @@ const Portfolio: React.FC = () => {
       {/* Atmospheric Smoke Effects (Pink Clouds) */}
       <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
         <div 
-          className="absolute top-1/4 left-1/4 w-[80vw] h-[80vh] opacity-30 blur-[80px] bg-gradient-to-br from-[#FFB7C5] via-[#E91E63] to-transparent rounded-full animate-float"
+          className="absolute top-1/4 left-1/4 w-[80vw] h-[80vh] opacity-30 blur-[80px] bg-gradient-to-br from-pink-200 via-pink-400 to-transparent rounded-full animate-float"
           style={{ transform: `translate(${mousePosition.x * 0.8}px, ${mousePosition.y * 0.8}px)` }}
         ></div>
         <div 
-          className="absolute bottom-1/4 right-1/4 w-[60vw] h-[60vh] opacity-20 blur-[100px] bg-gradient-to-tl from-[#F48FB1] via-[#AD1457] to-transparent rounded-full animate-bloom"
+          className="absolute bottom-1/4 right-1/4 w-[60vw] h-[60vh] opacity-20 blur-[100px] bg-gradient-to-tl from-rose-200 via-pink-500 to-transparent rounded-full animate-bloom"
           style={{ transform: `translate(${mousePosition.x * 1.2}px, ${mousePosition.y * 1.2}px)` }}
         ></div>
       </div>
@@ -49,7 +49,7 @@ const Portfolio: React.FC = () => {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-12">
           <div className="space-y-4 max-w-2xl">
-            <span className="text-[10px] font-black uppercase tracking-[8px] text-[#E91E63] block">Portfolio</span>
+            <span className="text-[10px] font-black uppercase tracking-[8px] text-[#E91E63] block">Case Studies</span>
             <p className="text-lg text-gray-600 font-light leading-relaxed max-w-md pt-8">
               A curated showcase of digital evolution. We design for motion, growth, and the silent authority of trust.
             </p>

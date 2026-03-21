@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <li><Link to="/" className="text-gray-400 hover:text-white text-xs transition-all">Home Ecosystem</Link></li>
               <li><Link to="/about" className="text-gray-400 hover:text-white text-xs transition-all">The Methodology</Link></li>
               <li><Link to="/services" className="text-gray-400 hover:text-white text-xs transition-all">Six Core Systems</Link></li>
-              <li><Link to="/portfolio" className="text-gray-400 hover:text-white text-xs transition-all">Success Stories</Link></li>
+              <li><Link to="/portfolio/case-studies" className="text-gray-400 hover:text-white text-xs transition-all">Case Studies</Link></li>
             </ul>
           </div>
 

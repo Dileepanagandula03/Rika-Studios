@@ -64,7 +64,6 @@ const ServicesOverview: React.FC = () => {
             <div className="bg-white p-10 rounded-[40px] border border-gray-100 shadow-xl hover:shadow-2xl transition-all group">
               <h3 className="text-2xl font-bold mb-4">The Authority Build</h3>
               <p className="text-gray-500 mb-8 font-light">Perfect for founders looking to establish their digital home and voice.</p>
-              <div className="text-4xl font-black mb-8">$2,500<span className="text-sm font-normal text-gray-400">/mo</span></div>
               <ul className="space-y-4 mb-10">
                 <li className="flex items-center gap-3 text-sm text-gray-600"><CheckCircle2 size={16} className="text-indigo-700" /> Authority Website</li>
                 <li className="flex items-center gap-3 text-sm text-gray-600"><CheckCircle2 size={16} className="text-indigo-700" /> Content Strategy</li>
@@ -78,7 +77,6 @@ const ServicesOverview: React.FC = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-16 -mt-16"></div>
               <h3 className="text-2xl font-bold mb-4 text-white">The Scale Engine</h3>
               <p className="text-indigo-100 mb-8 font-light">Our most popular system for brands ready to dominate their niche.</p>
-              <div className="text-4xl font-black mb-8 text-white">$5,000<span className="text-sm font-normal text-indigo-200">/mo</span></div>
               <ul className="space-y-4 mb-10">
                 <li className="flex items-center gap-3 text-sm text-indigo-50"><CheckCircle2 size={16} className="text-white" /> Full Growth Infrastructure</li>
                 <li className="flex items-center gap-3 text-sm text-indigo-50"><CheckCircle2 size={16} className="text-white" /> Advanced AI Agents</li>
@@ -92,7 +90,6 @@ const ServicesOverview: React.FC = () => {
             <div className="bg-white p-10 rounded-[40px] border border-gray-100 shadow-xl hover:shadow-2xl transition-all group">
               <h3 className="text-2xl font-bold mb-4">The Lab Partner</h3>
               <p className="text-gray-500 mb-8 font-light">Custom-engineered solutions for enterprise-level complexity.</p>
-              <div className="text-4xl font-black mb-8">Custom</div>
               <ul className="space-y-4 mb-10">
                 <li className="flex items-center gap-3 text-sm text-gray-600"><CheckCircle2 size={16} className="text-indigo-700" /> Dedicated Growth Team</li>
                 <li className="flex items-center gap-3 text-sm text-gray-600"><CheckCircle2 size={16} className="text-indigo-700" /> Custom AI Development</li>

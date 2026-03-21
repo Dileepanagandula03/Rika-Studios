@@ -19,10 +19,10 @@ const Products: React.FC = () => {
       heroTitle: 'Email Overload Is',
       heroTitleItalic: 'Killing Your Productivity',
       description: 'We automate your outreach from hours to minutes. You spend hours typing the same emails, attaching the same files, and following up manually. Opportunities slip away. What should take minutes takes hours.',
-      accentColor: 'blue',
-      accentClass: 'text-blue-600',
-      bgAccentClass: 'bg-blue-600',
-      glowColor: 'bg-blue-400',
+      accentColor: 'amber',
+      accentClass: 'text-amber-600',
+      bgAccentClass: 'bg-amber-600',
+      glowColor: 'bg-amber-400',
       problemTitle: 'The Problem',
       problemLead: 'Manual outreach is a bottleneck for growth.',
       problemDesc: 'You spend hours typing the same emails, attaching the same files, and following up manually. Opportunities slip away. What should take minutes takes hours.',
@@ -310,9 +310,9 @@ const Products: React.FC = () => {
             {Object.entries(products).map(([key, product]) => (
               <Link key={key} to={`/products/${key}`} className="group">
                 <div className="bg-white rounded-[40px] p-12 border border-gray-200 shadow-sm transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 relative overflow-hidden h-full">
-                  <div className={`absolute top-0 right-0 w-32 h-32 ${product.accentColor === 'blue' ? 'bg-blue-500/5' : 'bg-amber-500/5'} rounded-full blur-2xl -mr-16 -mt-16 group-hover:opacity-100 transition-opacity`}></div>
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:opacity-100 transition-opacity`}></div>
                   <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 shadow-lg border border-gray-100 group-hover:scale-110 transition-transform">
-                    {key === 'email-automation' ? <Mail className="text-blue-600" size={32} /> : <Bot className="text-amber-600" size={32} />}
+                    {key === 'email-automation' ? <Mail className="text-amber-600" size={32} /> : <Bot className="text-amber-600" size={32} />}
                   </div>
                   <h3 className="text-3xl font-bold text-[#1A1A1A] mb-4">{product.title}</h3>
                   <p className="text-gray-500 font-medium leading-relaxed mb-8">

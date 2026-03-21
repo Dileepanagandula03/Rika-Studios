@@ -54,13 +54,8 @@ const Header: React.FC = () => {
       ]
     },
     { 
-      name: 'Portfolio', 
-      path: '/portfolio', 
-      isDropdown: true,
-      items: [
-        { name: 'Projects', path: '/portfolio/projects' },
-        { name: 'Case Studies', path: '/portfolio/case-studies' }
-      ]
+      name: 'Case Studies', 
+      path: '/portfolio/case-studies', 
     },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
