@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Heart, Search, Cpu, BarChart3, Waves, ChevronRight, Quote } from 'lucide-react';
+import { ArrowRight, Sparkles, Heart, Search, Cpu, BarChart3, Waves, ChevronRight, Quote, Mail, Target, Layout, Share2, FileText } from 'lucide-react';
 import { SERVICES } from '../constants';
 
 const TESTIMONIALS = [
@@ -24,7 +24,7 @@ const TESTIMONIALS = [
     signature: "Elena Rossi"
   },
   {
-    quote: "Precision meeting empathy. That is the Rika Gayar standard. Our lead quality has never been higher or more intentional.",
+    quote: "Precision meeting empathy. That is the Rika Studios standard. Our lead quality has never been higher or more intentional.",
     author: "David L.",
     role: "Partner, Velo Venture",
     signature: "David Laurent"
@@ -35,7 +35,9 @@ const INSIGHTS: Record<string, string> = {
   'cold-email': 'Direct outreach that gets replies.',
   'lead-generation': 'Engineered for high-intent traffic.',
   'ai-agents': 'Amplifying brand voice with AI.',
-  'website-experience': 'Your living authority asset.'
+  'website-experience': 'Your living authority asset.',
+  'social-media-marketing': 'Strategic content for brand authority.',
+  'content-marketing': 'Storytelling that drives organic growth.'
 };
 
 const ProcessStep: React.FC<{ 
@@ -69,6 +71,15 @@ const ProcessStep: React.FC<{
   );
 };
 
+const ICON_MAP: Record<string, React.ReactNode> = {
+  'mail': <Mail size={40} />,
+  'target': <Target size={40} />,
+  'cpu': <Cpu size={40} />,
+  'layout': <Layout size={40} />,
+  'share-2': <Share2 size={40} />,
+  'file-text': <FileText size={40} />
+};
+
 const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number }> = ({ service, index }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -95,12 +106,10 @@ const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number
     >
       <div className="relative mb-8">
         <div className="absolute inset-[-60px] rounded-full blur-[80px] opacity-0 group-hover:opacity-70 transition-all duration-1000 animate-pulse bg-gradient-to-tr from-[#E91E63]/25 via-[#FFB347]/15 to-transparent pointer-events-none"></div>
-        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10 transition-all duration-700 group-hover:scale-105 group-hover:shadow-[0_30px_60px_-12px_rgba(233,30,99,0.3)] group-hover:brightness-105">
-          <img 
-            src={`https://picsum.photos/seed/${service.id}/400/400`} 
-            alt={service.title} 
-            className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" 
-          />
+        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center border-4 border-white shadow-xl relative z-10 transition-all duration-700 group-hover:scale-105 group-hover:shadow-[0_30px_60px_-12px_rgba(233,30,99,0.3)] bg-gray-50">
+          <div className="text-[#E91E63] opacity-20 group-hover:opacity-100 transition-opacity">
+            {ICON_MAP[service.icon] || <Sparkles size={40} />}
+          </div>
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none"></div>
         </div>
       </div>
@@ -198,6 +207,20 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* TRUSTED BY SECTION */}
+      <section className="py-20 border-y border-gray-100 bg-white/50 backdrop-blur-sm relative z-20">
+        <div className="container mx-auto px-6">
+          <p className="text-[10px] uppercase tracking-[4px] text-gray-400 text-center mb-12 font-black">Trusted by industry leaders</p>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale">
+            <div className="text-2xl font-black tracking-tighter">TECHFLOW</div>
+            <div className="text-2xl font-black tracking-tighter">NEXUS.AI</div>
+            <div className="text-2xl font-black tracking-tighter">AURORA</div>
+            <div className="text-2xl font-black tracking-tighter">VANTAGE</div>
+            <div className="text-2xl font-black tracking-tighter">GLO.GLOBAL</div>
+          </div>
+        </div>
+      </section>
+
       {/* BLOCK 2: METHODOLOGY - CLEAN AESTHETIC */}
       <section ref={block2Ref} className="py-24 md:py-40 bg-[#F2F4E8] relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
@@ -251,11 +274,12 @@ const Home: React.FC = () => {
             <div className="md:w-1/2 relative">
                <div className="aspect-[4/5] md:aspect-square bg-gray-50 rounded-[80px] overflow-hidden shadow-2xl relative">
                   <img 
-                    src="https://images.pexels.com/photos/35267956/pexels-photo-35267956.jpeg" 
-                    alt="Nyhavn - Strategic Environments" 
-                    className="w-full h-full object-cover transition-transform duration-[3s] hover:scale-110"
+                    src="https://picsum.photos/seed/founder/800/800" 
+                    alt="Founder" 
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60"></div>
                </div>
                <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#E91E63] rounded-full flex items-center justify-center p-8 text-white shadow-xl rotate-12">
                   <Sparkles size={40} className="animate-pulse" />
@@ -267,7 +291,7 @@ const Home: React.FC = () => {
                  "In a world of <br /> automation, <br /> <span className="italic text-[#E91E63]">Human Intent</span> <br /> is the ultimate moat."
                </h2>
                <p className="text-gray-600 text-lg font-light leading-relaxed mb-10 max-w-lg">
-                 My vision for Rika Gayar Studios was simple: build digital environments where brands don't just exist—they lead. We focus on the silent authority of trust and the precise intelligence of growth.
+                 My vision for Rika Studios was simple: build digital environments where brands don't just exist—they lead. We focus on the silent authority of trust and the precise intelligence of growth.
                </p>
                <div className="flex flex-col gap-2">
                   <span className="italic font-medium text-4xl text-[#2D3134]">Dileep</span>
@@ -349,7 +373,7 @@ const Home: React.FC = () => {
              Start Evaluation <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
            </Link>
            <div className="mt-20 flex flex-col items-center">
-              <span className="italic font-medium text-5xl text-[#2D3134]/20">Rika Gayar</span>
+              <span className="italic font-medium text-5xl text-[#2D3134]/20">Rika Studios</span>
            </div>
         </div>
       </section>

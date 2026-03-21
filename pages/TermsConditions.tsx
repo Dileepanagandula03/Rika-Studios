@@ -53,7 +53,7 @@ const TermsConditions: React.FC = () => {
                 <span className="text-[#E91E63] text-sm font-black italic">02.</span> Intellectual Property
               </h2>
               <p>
-                All content on this site — including text, branding, frameworks, systems, graphics, and design — is the intellectual property of Rika Gayar Studios unless otherwise stated.
+                All content on this site — including text, branding, frameworks, systems, graphics, and design — is the intellectual property of Rika Studios unless otherwise stated.
               </p>
               <p>
                 Reproduction, distribution, or modification without written consent is prohibited.
@@ -86,7 +86,7 @@ const TermsConditions: React.FC = () => {
                 <span className="text-[#E91E63] text-sm font-black italic">05.</span> Limitation of Liability
               </h2>
               <p>
-                Rika Gayar Studios shall not be liable for any indirect, incidental, or consequential damages arising from the use of this website.
+                Rika Studios shall not be liable for any indirect, incidental, or consequential damages arising from the use of this website.
               </p>
             </section>
 
@@ -103,9 +103,9 @@ const TermsConditions: React.FC = () => {
               <div className="bg-[#2D3134] text-white p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                   <h4 className="text-[10px] uppercase tracking-[3px] font-black text-[#E91E63] mb-2">Legal Inquiries</h4>
-                  <p className="text-lg font-bold">hello@rikagayar.studios</p>
+                  <p className="text-lg font-bold">rikagarstudios@gmail.com</p>
                 </div>
-                <a href="mailto:hello@rikagayar.studios" className="px-8 py-4 rounded-full bg-[#E91E63] text-white text-[10px] uppercase font-black tracking-[3px] hover:scale-105 transition-all flex items-center gap-2">
+                <a href="mailto:rikagarstudios@gmail.com" className="px-8 py-4 rounded-full bg-[#E91E63] text-white text-[10px] uppercase font-black tracking-[3px] hover:scale-105 transition-all flex items-center gap-2">
                   <Mail size={14} /> Contact Us
                 </a>
               </div>

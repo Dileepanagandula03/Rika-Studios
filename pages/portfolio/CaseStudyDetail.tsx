@@ -13,10 +13,6 @@ const CaseStudyDetail: React.FC = () => {
 
         {/* Hero Section */}
         <div className="max-w-5xl mb-24">
-          <h1 className="text-5xl md:text-8xl font-bold text-[#2D3134] leading-[0.9] mb-10">
-            The Flora <br />
-            <span className="italic text-[#E91E63]">Legacy.</span>
-          </h1>
           <div className="flex flex-wrap gap-12 border-y border-gray-100 py-10">
              <div>
                 <span className="text-[9px] uppercase tracking-[4px] font-black text-gray-400 block mb-2">Client</span>
@@ -34,25 +30,11 @@ const CaseStudyDetail: React.FC = () => {
         </div>
 
         {/* The Challenge */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-40">
-           <div className="lg:col-span-5">
-              <span className="text-[#E91E63] text-[10px] uppercase tracking-[8px] font-black block mb-6">The Stagnation</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#2D3134] leading-tight mb-8">
-                A decade of silence <br /> in a digital-first world.
-              </h2>
-              <p className="text-gray-600 font-light leading-relaxed text-lg">
-                For 10 years, Flora Legacy operated strictly via word-of-mouth. Their digital presence was a 2014 placeholder. While their artistry was world-class, their visibility was zero. They were losing 80% of their local market share to "factory florists" because they lacked the infrastructure to be found and trusted online.
-              </p>
-           </div>
-           <div className="lg:col-span-7">
-              <div className="rounded-[50px] overflow-hidden shadow-2xl h-full">
-                 <img 
-                  src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Floral Workspace" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-           </div>
+        <div className="max-w-4xl mb-40">
+           <span className="text-[#E91E63] text-[10px] uppercase tracking-[8px] font-black block mb-6">The Stagnation</span>
+           <p className="text-gray-600 font-light leading-relaxed text-xl">
+             For 10 years, Flora Legacy operated strictly via word-of-mouth. Their digital presence was a 2014 placeholder. While their artistry was world-class, their visibility was zero. They were losing 80% of their local market share to "factory florists" because they lacked the infrastructure to be found and trusted online.
+           </p>
         </div>
 
         {/* The 2026 Solution */}
@@ -99,7 +81,6 @@ const CaseStudyDetail: React.FC = () => {
         <div className="mb-40">
            <div className="text-center mb-20">
               <span className="text-[#E91E63] text-[10px] uppercase tracking-[10px] font-black block mb-6">Outcome</span>
-              <h2 className="text-4xl md:text-6xl font-bold text-[#2D3134]">Quantifiable Evolution.</h2>
            </div>
            
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -121,9 +102,6 @@ const CaseStudyDetail: React.FC = () => {
 
         {/* CTA */}
         <div className="bg-[#F7F6F2] rounded-[60px] p-12 md:p-24 text-center">
-           <h3 className="text-3xl md:text-5xl font-bold text-[#2D3134] mb-10 leading-tight">
-             Want a similar <br /> <span className="text-[#E91E63]">Revamp?</span>
-           </h3>
            <Link to="/contact" className="inline-flex items-center gap-4 bg-[#2D3134] text-white px-16 py-6 rounded-full text-[11px] uppercase font-black tracking-[5px] hover:bg-[#E91E63] transition-all shadow-xl">
              Start Your Evolution <Sparkles size={16} />
            </Link>

@@ -5,6 +5,11 @@ import { motion } from 'framer-motion';
 import { SERVICES } from '../../constants';
 import { CheckCircle2, ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
 import LeadGenSection from '../../components/LeadGenSection';
+import ColdEmailSection from '../../components/ColdEmailSection';
+import AIAgentsSection from '../../components/AIAgentsSection';
+import WebsiteExperienceSection from '../../components/WebsiteExperienceSection';
+import SocialMediaSection from '../../components/SocialMediaSection';
+import ContentCreatorSection from '../../components/ContentCreatorSection';
 
 const ServiceDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,6 +25,26 @@ const ServiceDetail: React.FC = () => {
 
   if (service.id === 'lead-generation') {
     return <LeadGenSection />;
+  }
+
+  if (service.id === 'cold-email') {
+    return <ColdEmailSection />;
+  }
+
+  if (service.id === 'ai-agents') {
+    return <AIAgentsSection />;
+  }
+
+  if (service.id === 'website-experience') {
+    return <WebsiteExperienceSection />;
+  }
+
+  if (service.id === 'social-media-marketing') {
+    return <SocialMediaSection />;
+  }
+
+  if (service.id === 'content-marketing') {
+    return <ContentCreatorSection />;
   }
 
   return (

@@ -53,7 +53,7 @@ const Logo: React.FC<LogoProps> = ({
         <div className={className}>{Icon}</div>
         <div className="flex flex-col -mt-1">
           <span className={`text-xl md:text-2xl font-light tracking-[0.4em] uppercase leading-none ${textColor}`}>RIKA</span>
-          <span className="text-[7px] md:text-[8px] tracking-[0.3em] uppercase text-[#E91E63] font-bold mt-1">Gayar Studios</span>
+          <span className="text-[7px] md:text-[8px] tracking-[0.3em] uppercase text-[#E91E63] font-bold mt-1">Studios</span>
         </div>
       </div>
     );
@@ -64,7 +64,7 @@ const Logo: React.FC<LogoProps> = ({
       <div className={className}>{Icon}</div>
       <div className="mt-2 flex flex-col items-center">
         <span className={`text-2xl font-light tracking-[0.5em] uppercase leading-none ${textColor}`}>RIKA</span>
-        <span className="text-[9px] tracking-[0.4em] uppercase text-[#E91E63] font-bold mt-2">Gayar Studios</span>
+        <span className="text-[9px] tracking-[0.4em] uppercase text-[#E91E63] font-bold mt-2">Studios</span>
       </div>
     </div>
   );

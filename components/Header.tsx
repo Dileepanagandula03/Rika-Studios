@@ -50,7 +50,6 @@ const Header: React.FC = () => {
       isDropdown: true,
       items: [
         { name: 'Email Automation Tool', path: '/products/email-automation' },
-        { name: 'AI Resume Tailoring Tool', path: '/products/ai-resume-tailoring' },
         { name: 'AI Agent (Clawdbot)', path: '/products/clawdbot' }
       ]
     },
@@ -70,19 +69,19 @@ const Header: React.FC = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500`}>
       {/* Top Info Bar */}
-      <div className={`border-b border-gray-100 py-2 hidden md:block transition-all duration-500 ${scrolled ? 'bg-white/90 translate-y-[-100%] opacity-0' : 'bg-transparent'}`}>
-        <div className="container mx-auto px-6 flex justify-between items-center text-[8px] uppercase tracking-[3px] text-gray-400 font-black">
+      <div className={`border-b border-gray-100 py-2 hidden md:block transition-all duration-500 ${scrolled ? 'bg-white/90 translate-y-[-100%] opacity-0' : 'bg-white/30 backdrop-blur-md'}`}>
+        <div className="container mx-auto px-6 flex justify-between items-center text-[10px] uppercase tracking-[3px] text-[#2D3134] font-black">
           <div className="flex items-center gap-3">
-            <Mail size={12} className="text-[#E91E63]" />
-            <span>hello@rikagayar.studios</span>
+            <Mail size={14} className="text-[#E91E63]" />
+            <span>rikagarstudios@gmail.com</span>
           </div>
           <div className="flex items-center gap-4">
-            <Instagram size={14} className="hover:text-[#E91E63] cursor-pointer transition-colors" />
-            <Linkedin size={14} className="hover:text-[#E91E63] cursor-pointer transition-colors" />
+            <Instagram size={16} className="hover:text-[#E91E63] cursor-pointer transition-colors" />
+            <Linkedin size={16} className="hover:text-[#E91E63] cursor-pointer transition-colors" />
             <div className="h-4 w-[1px] bg-gray-200"></div>
             <div className="flex items-center gap-3">
-              <Phone size={12} className="text-[#E91E63]" />
-              <span>+1 (301) 852-4988</span>
+              <Phone size={14} className="text-[#E91E63]" />
+              <span>+1 618-448-1540</span>
             </div>
           </div>
         </div>

@@ -82,9 +82,9 @@ const CookiePolicy: React.FC = () => {
               <div className="bg-[#2D3134] text-white p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                   <h4 className="text-[10px] uppercase tracking-[3px] font-black text-[#E91E63] mb-2">Questions?</h4>
-                  <p className="text-lg font-bold">hello@rikagayar.studios</p>
+                  <p className="text-lg font-bold">rikagarstudios@gmail.com</p>
                 </div>
-                <a href="mailto:hello@rikagayar.studios" className="px-8 py-4 rounded-full bg-[#E91E63] text-white text-[10px] uppercase font-black tracking-[3px] hover:scale-105 transition-all flex items-center gap-2">
+                <a href="mailto:rikagarstudios@gmail.com" className="px-8 py-4 rounded-full bg-[#E91E63] text-white text-[10px] uppercase font-black tracking-[3px] hover:scale-105 transition-all flex items-center gap-2">
                   <Mail size={14} /> Contact Us
                 </a>
               </div>

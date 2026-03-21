@@ -56,11 +56,11 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 group">
                 <Mail size={14} className="text-[#E91E63]" />
-                <span className="text-gray-300 text-xs font-light">hello@rikagayar.studios</span>
+                <span className="text-gray-300 text-xs font-light">rikagarstudios@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 group">
                 <Phone size={14} className="text-[#E91E63]" />
-                <span className="text-gray-300 text-xs font-light">+1 (301) 852-4988</span>
+                <span className="text-gray-300 text-xs font-light">+1 618-448-1540</span>
               </div>
             </div>
             
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar - Block 6 Integration */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-[8px] uppercase tracking-[3px] font-black">
-          <p className="order-2 md:order-1 mt-6 md:mt-0">© 2026 Rika Gayar Studios. All rights reserved.</p>
+          <p className="order-2 md:order-1 mt-6 md:mt-0">© 2026 Rika Studios. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 order-1 md:order-2">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span className="opacity-20 hidden md:inline">·</span>
