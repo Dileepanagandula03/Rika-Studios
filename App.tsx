@@ -16,6 +16,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import Accessibility from './pages/Accessibility';
 import CookiePolicy from './pages/CookiePolicy';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -28,6 +29,7 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
+    <ErrorBoundary>
     <Router>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col selection:bg-[#E91E63]/10 selection:text-[#E91E63]">
@@ -63,6 +65,7 @@ const App: React.FC = () => {
         <Footer />
       </div>
     </Router>
+    </ErrorBoundary>
   );
 };
 

@@ -2,8 +2,10 @@ import express from "express";
 import { createServer as createViteServer } from "vite";
 import { Resend } from "resend";
 import cors from "cors";
+import rateLimit from "express-rate-limit";
 import dotenv from "dotenv";
 import path from "path";
+import { randomUUID } from "crypto";
 
 dotenv.config();
 
@@ -24,21 +26,48 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
-  app.use(cors());
-  app.use(express.json());
+  app.use((_req, res, next) => {
+    res.removeHeader('Content-Security-Policy');
+    res.removeHeader('Content-Security-Policy-Report-Only');
+    next();
+  });
+  app.use(cors({
+    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : '*',
+  }));
+  app.use(express.json({ limit: '10kb' }));
+
+  // Health check
+  app.get('/api/health', (_req, res) => res.status(200).json({ status: 'ok' }));
+
+  // Rate limit: max 10 contact submissions per 15 minutes per IP
+  const contactLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 10,
+    message: { error: 'Too many requests. Please try again later.' },
+  });
 
   // API Route for Contact Form
-  app.post("/api/contact", async (req, res) => {
+  app.post("/api/contact", contactLimiter, async (req, res) => {
     const { name, email, phone, message } = req.body;
 
     if (!name || !email || !message) {
       return res.status(400).json({ error: "All fields are required." });
     }
 
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: "Invalid email address." });
+    }
+
+    // Message length limit
+    if (message.length > 5000) {
+      return res.status(400).json({ error: "Message is too long." });
+    }
+
     try {
       const resend = getResend();
-      const submissionId = Math.random().toString(36).substring(7).toUpperCase();
-      console.log(`Attempting to send email to: ${process.env.RECEIVING_EMAIL || "rikagayarstudio@gmail.com"}`);
+      const submissionId = randomUUID().substring(0, 8).toUpperCase();
       
       const { data, error } = await resend.emails.send({
         from: "Rika Studios <onboarding@resend.dev>",
@@ -63,14 +92,11 @@ async function startServer() {
       });
 
       if (error) {
-        console.error("Resend API Error:", error);
         return res.status(400).json({ error });
       }
 
-      console.log("Resend Success Response:", data);
       res.status(200).json({ message: "Email sent successfully!", data });
     } catch (err) {
-      console.error("Server Error:", err);
       res.status(500).json({ error: "Internal server error." });
     }
   });
@@ -91,7 +117,9 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    if (process.env.NODE_ENV !== 'production') {
+      console.log(`Server running on http://localhost:${PORT}`);
+    }
   });
 }
 
