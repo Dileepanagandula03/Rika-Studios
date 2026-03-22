@@ -64,6 +64,17 @@ const ServiceDetail: React.FC = () => {
           <div className="relative z-10">
             <span className="text-[#F3CF5F] text-[10px] uppercase tracking-[8px] font-black block mb-6">Service Detail</span>
             <h1 className="text-4xl md:text-6xl font-bold text-[#2D3134] mb-8 tracking-tight">{service.title}</h1>
+            
+            {/* Service Image */}
+            <div className="mb-12 rounded-3xl overflow-hidden shadow-lg border-4 border-[#FFFBF0]">
+              <img 
+                src={service.imageUrl} 
+                alt={service.title} 
+                className="w-full h-64 object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
             <p className="text-xl text-gray-600 font-light leading-relaxed mb-12">
               {service.fullDescription}
             </p>

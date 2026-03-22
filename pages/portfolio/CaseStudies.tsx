@@ -58,42 +58,6 @@ const CASE_STUDIES = [
     description: 'Designing a structured growth infrastructure capable of supporting long-term market positioning for a local event brand.',
     image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=800',
     color: 'bg-rose-50'
-  },
-  {
-    id: 'luxe-wellness',
-    title: 'Growth Systems',
-    subtitle: 'Luxe Wellness',
-    tagline: 'Scaling brand trust through human-guided automation.',
-    description: 'How we transitioned a robotic sequence into a human-first conversion environment.',
-    image: 'https://picsum.photos/seed/wellness/800/600',
-    color: 'bg-pink-50'
-  },
-  {
-    id: 'aurora-fintech',
-    title: 'Conversion Web',
-    subtitle: 'Aurora FinTech',
-    tagline: 'Designing authority for the future of finance.',
-    description: 'Building a high-authority digital home that radiates trust in a volatile market.',
-    image: 'https://picsum.photos/seed/finance/800/600',
-    color: 'bg-rose-50'
-  },
-  {
-    id: 'ethos-fashion',
-    title: 'Brand Authority',
-    subtitle: 'Ethos Fashion',
-    tagline: 'Designing a high-authority digital home for sustainable fashion.',
-    description: 'How we used strategic design to position a sustainable brand as a market leader.',
-    image: 'https://picsum.photos/seed/fashion/800/600',
-    color: 'bg-pink-50'
-  },
-  {
-    id: 'nexa-ai',
-    title: 'Product Narrative',
-    subtitle: 'Nexa AI Platform',
-    tagline: 'Translating complex AI capabilities into human-first value.',
-    description: 'How we architected a product narrative that bridges the gap between tech and trust.',
-    image: 'https://picsum.photos/seed/tech/800/600',
-    color: 'bg-rose-50'
   }
 ];
 

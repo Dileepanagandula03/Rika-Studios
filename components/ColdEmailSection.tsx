@@ -66,6 +66,27 @@ const ColdEmailSection: React.FC = () => {
             </motion.div>
           </div>
 
+          {/* SERVICE IMAGE */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto mb-32 rounded-[60px] overflow-hidden shadow-2xl border-8 border-white relative group"
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=2070&auto=format&fit=crop" 
+              alt="Cold Email Marketing" 
+              className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            <div className="absolute bottom-10 left-10">
+              <div className="flex items-center gap-3 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/30 text-white text-[10px] font-black uppercase tracking-[3px]">
+                <Mail size={14} /> High-Intent Outreach
+              </div>
+            </div>
+          </motion.div>
+
           {/* THE PROBLEM & WHAT WE DO */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-32">
             {/* The Problem */}

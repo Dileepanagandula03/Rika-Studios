@@ -20,8 +20,14 @@ const ServicesOverview: React.FC = () => {
             <div key={service.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-center`}>
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <div className="w-full aspect-video bg-white rounded-[50px] shadow-xl overflow-hidden p-2 flex items-center justify-center">
-                    <Sparkles size={64} className="text-indigo-700 opacity-10" />
+                  <div className="w-full aspect-video bg-white rounded-[50px] shadow-xl overflow-hidden relative group">
+                    <img 
+                      src={service.imageUrl} 
+                      alt={service.title} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-indigo-700/10 group-hover:bg-transparent transition-colors duration-500"></div>
                   </div>
                   <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-700 rounded-full flex items-center justify-center text-white text-4xl font-bold italic shadow-xl">
                     0{index + 1}

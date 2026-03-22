@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Send as Telegram, CheckCircle2, AlertCircle, Globe, Zap, Cpu } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Send as Telegram, CheckCircle2, AlertCircle, Globe, Zap, Cpu, ChevronDown } from 'lucide-react';
+import { SERVICES } from '../constants';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const Contact: React.FC = () => {
     email: '',
     phone: '',
     countryCode: '+1',
+    service: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -64,7 +66,7 @@ const Contact: React.FC = () => {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', phone: '', countryCode: '+1', message: '' });
+        setFormData({ name: '', email: '', phone: '', countryCode: '+1', service: '', message: '' });
       } else {
         setStatus('error');
         setErrorMessage(data.error?.message || 'Failed to send message. Please try again.');
@@ -401,6 +403,27 @@ const Contact: React.FC = () => {
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className="flex-1 bg-transparent border-b border-gray-300 rounded-none px-1 py-1.5 text-[#1A1A1A] text-sm placeholder-gray-400 focus:border-pink-500 transition-all outline-none"
                         />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1 group">
+                      <label className="text-[7px] font-black uppercase tracking-[4px] text-gray-600 ml-1 group-focus-within:text-pink-500 transition-colors">Service Interest</label>
+                      <div className="relative">
+                        <select 
+                          required
+                          value={formData.service}
+                          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                          className="w-full bg-transparent border-b border-gray-300 rounded-none px-1 py-1.5 text-[#1A1A1A] text-sm focus:border-pink-500 transition-all outline-none appearance-none cursor-pointer"
+                        >
+                          <option value="" disabled className="text-gray-400">Select a service</option>
+                          {SERVICES.map((s) => (
+                            <option key={s.id} value={s.title}>{s.title}</option>
+                          ))}
+                          <option value="Other">Other / Custom Inquiry</option>
+                        </select>
+                        <div className="absolute right-1 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                          <ChevronDown size={14} />
+                        </div>
                       </div>
                     </div>
 

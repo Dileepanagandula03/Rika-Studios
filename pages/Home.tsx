@@ -275,41 +275,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* NEW: FOUNDER'S VISION SECTION */}
-      <section className="py-32 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-16 lg:gap-32">
-            <div className="md:w-1/2 relative">
-               <div className="aspect-[4/5] md:aspect-square bg-gray-50 rounded-[80px] overflow-hidden shadow-2xl relative">
-                  <img 
-                    src="https://picsum.photos/seed/founder/800/800" 
-                    alt="Founder" 
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60"></div>
-               </div>
-               <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#E91E63] rounded-full flex items-center justify-center p-8 text-white shadow-xl rotate-12">
-                  <Sparkles size={40} className="animate-pulse" />
-               </div>
-            </div>
-            <div className="md:w-1/2">
-               <span className="text-[#E91E63] text-[10px] uppercase tracking-[10px] font-black block mb-8">From the Director</span>
-               <h2 className="text-4xl md:text-6xl font-bold text-[#2D3134] mb-10 leading-tight">
-                 "In a world of <br /> automation, <br /> <span className="italic text-[#E91E63]">Human Intent</span> <br /> is the ultimate moat."
-               </h2>
-               <p className="text-gray-600 text-lg font-light leading-relaxed mb-10 max-w-lg">
-                 My vision for Rika Studios was simple: build digital environments where brands don't just exist—they lead. We focus on the silent authority of trust and the precise intelligence of growth.
-               </p>
-               <div className="flex flex-col gap-2">
-                  <span className="italic font-medium text-4xl text-[#2D3134]">Dileep</span>
-                  <span className="text-[10px] uppercase tracking-[5px] font-black text-gray-400">Founder & Strategic Director</span>
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* BLOCK 3: SERVICES */}
       <section className="py-32 relative overflow-hidden bg-[#FFFBF0]">
         <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
@@ -372,13 +337,13 @@ const Home: React.FC = () => {
               <Heart size={32} fill="#E91E63" className="text-[#E91E63] animate-float" />
            </div>
            <h2 className="text-3xl md:text-5xl font-bold text-[#2D3134] mb-10 italic leading-tight">
-             Ready to start your <br /> <span className="text-[#E91E63]">Authority Build?</span>
+             Let’s build <br /> <span className="text-[#E91E63]">something that lasts.</span>
            </h2>
            <p className="text-gray-500 mb-12 max-w-md mx-auto font-light leading-relaxed">
-             Our next growth cycle is opening soon. Join the brands that choose intentional infrastructure over robotic noise.
+             We partner with founders, creators, and brands who care about depth, clarity, and intentional growth.
            </p>
            <Link to="/contact" className="group relative inline-flex items-center gap-4 bg-[#2D3134] text-white px-16 py-6 rounded-full text-[11px] uppercase font-black tracking-[5px] hover:bg-[#E91E63] transition-all shadow-xl hover:scale-105 active:scale-95">
-             Start Evaluation <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+             Start Conversation <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
            </Link>
            <div className="mt-20 flex flex-col items-center">
               <span className="italic font-medium text-5xl text-[#2D3134]/20">Rika Studios</span>

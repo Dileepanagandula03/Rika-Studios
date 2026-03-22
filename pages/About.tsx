@@ -27,45 +27,6 @@ const About: React.FC = () => {
     { icon: <Shield />, title: 'Narrative Trust', desc: 'Content and brand narratives that build long-term trust.' },
   ];
 
-  const coreSystems = [
-    { 
-      id: '01', 
-      title: 'Outreach Activation Systems', 
-      desc: 'Cold email and outbound systems designed to generate qualified conversations.',
-      icon: <Mail size={24} />
-    },
-    { 
-      id: '02', 
-      title: 'Demand Generation Systems', 
-      desc: 'Paid acquisition and funnel strategies built for predictable lead flow.',
-      icon: <BarChart3 size={24} />
-    },
-    { 
-      id: '03', 
-      title: 'Intelligent Interaction Systems', 
-      desc: 'AI-driven communication workflows that scale customer engagement.',
-      icon: <Cpu size={24} />
-    },
-    { 
-      id: '04', 
-      title: 'Conversion Environments', 
-      desc: 'High-performance websites and landing pages optimized for conversion.',
-      icon: <Layers size={24} />
-    },
-    { 
-      id: '05', 
-      title: 'Social Presence Systems', 
-      desc: 'Platform-specific strategies to build consistent visibility and audience trust.',
-      icon: <Share2 size={24} />
-    },
-    { 
-      id: '06', 
-      title: 'Narrative Authority Systems', 
-      desc: 'Content strategies that position brands as credible and trusted voices.',
-      icon: <PenTool size={24} />
-    }
-  ];
-
   return (
     <div className="min-h-screen relative overflow-hidden pt-32 pb-24 bg-[#FFF5F7]">
       
@@ -235,8 +196,7 @@ const About: React.FC = () => {
             className="mt-20 text-center max-w-3xl mx-auto"
           >
             <p className="text-gray-800 text-lg font-medium leading-relaxed">
-              We work with founders, brands, and creators who value clarity, consistency, and sustainable growth. 
-              <span className="block mt-6 font-bold text-[#1A1A1A] text-2xl tracking-tight">
+              <span className="block font-bold text-[#1A1A1A] text-2xl tracking-tight">
                 Growth should be <span className="italic text-[#E91E63]">intentional</span>. Not accidental.
               </span>
             </p>
@@ -277,63 +237,6 @@ const About: React.FC = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Six Core Systems Section */}
-        <section className="mb-20">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 border border-pink-100 text-[9px] font-black uppercase tracking-[3px] text-[#E91E63] mb-6">
-              🌿 The Framework
-            </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-[#1A1A1A] tracking-tighter">
-              Six Core <span className="italic text-[#E91E63]">Systems</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreSystems.map((system, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -15, scale: 1.02 }}
-                className="group relative h-full"
-              >
-                {/* Outer Glow */}
-                <div className="absolute inset-0 bg-pink-500/5 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                <div className="relative p-10 rounded-[40px] bg-white/95 backdrop-blur-xl border border-white shadow-2xl h-full flex flex-col overflow-hidden">
-                  {/* Tech Background Elements */}
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-pink-500/5 rounded-full blur-3xl group-hover:bg-pink-500/10 transition-colors"></div>
-                  <div className="absolute top-10 right-10 w-20 h-20 rounded-full border border-dashed border-pink-500/10 animate-spin-slow pointer-events-none" style={{ animationDuration: '15s' }}></div>
-                  
-                  <div className="flex items-center justify-between mb-10 relative z-10">
-                    <span className="text-[40px] font-serif italic text-pink-600/20 group-hover:text-[#E91E63] transition-colors duration-500">{system.id}</span>
-                    <div className="w-14 h-14 rounded-2xl bg-pink-50 shadow-inner flex items-center justify-center text-[#E91E63] group-hover:bg-[#E91E63] group-hover:text-white transition-all duration-500 transform group-hover:rotate-[360deg]">
-                      {system.icon}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4 tracking-tight leading-tight group-hover:text-[#E91E63] transition-colors">{system.title}</h3>
-                  <p className="text-gray-800 text-base font-medium leading-relaxed flex-grow">{system.desc}</p>
-                  
-                  <div className="mt-10 pt-8 border-t border-gray-100 flex items-center justify-between relative z-10">
-                    <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[3px] text-[#E91E63]">
-                      System Active <div className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-ping"></div>
-                    </div>
-                    <ArrowRight size={18} className="text-gray-300 group-hover:text-[#E91E63] group-hover:translate-x-2 transition-all" />
-                  </div>
-                  
-                  {/* Orbiting node inside card */}
-                  <div className="absolute inset-0 animate-spin-slow pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" style={{ animationDuration: '12s' }}>
-                    <div className="w-2 h-2 rounded-full bg-[#E91E63] absolute bottom-8 right-1/2 shadow-[0_0_10px_#E91E63]"></div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </section>
 

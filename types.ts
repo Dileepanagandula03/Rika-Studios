@@ -6,6 +6,7 @@ export interface ServiceItem {
   icon: string;
   fullDescription: string;
   benefits: string[];
+  imageUrl: string;
 }
 
 export interface PortfolioItem {

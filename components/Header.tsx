@@ -132,12 +132,6 @@ const Header: React.FC = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <Link 
-              to="/contact" 
-              className="px-8 py-3 rounded-full bg-[#2D3134] text-white text-[10px] uppercase font-black tracking-[3px] shadow-lg hover:bg-[#E91E63] transition-all transform hover:scale-105"
-            >
-              Start Evolution
-            </Link>
           </div>
 
           <button className="lg:hidden text-[#2D3134]" onClick={() => setIsOpen(!isOpen)}>
@@ -182,7 +176,6 @@ const Header: React.FC = () => {
             </div>
           ))}
           <div className="mt-12 pb-12">
-             <Link to="/contact" className="w-full bg-[#E91E63] text-white text-center py-5 rounded-full text-lg font-black shadow-xl block" onClick={() => setIsOpen(false)}>Start Evolution</Link>
              <div className="mt-8 flex justify-center gap-6 text-gray-400">
                 <Instagram size={24} />
                 <Linkedin size={24} />
