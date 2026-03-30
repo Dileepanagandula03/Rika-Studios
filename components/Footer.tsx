@@ -43,12 +43,12 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <h4 className="text-[#E91E63] text-[9px] uppercase tracking-[5px] font-black">Systems</h4>
             <ul className="space-y-2">
-              <li><Link to="/services/cold-email" className="text-gray-400 hover:text-white text-xs transition-all">Cold Email Marketing</Link></li>
-              <li><Link to="/services/lead-generation" className="text-gray-400 hover:text-white text-xs transition-all">Lead Generation</Link></li>
-              <li><Link to="/services/ai-agents" className="text-gray-400 hover:text-white text-xs transition-all">AI Agents / Chatbots</Link></li>
-              <li><Link to="/services/website-experience" className="text-gray-400 hover:text-white text-xs transition-all">Website Experience</Link></li>
-              <li><Link to="/services/social-media-marketing" className="text-gray-400 hover:text-white text-xs transition-all">Social Media Marketing</Link></li>
-              <li><Link to="/services/content-marketing" className="text-gray-400 hover:text-white text-xs transition-all">Content Creation Ecosystem</Link></li>
+              <li><Link to="/services/cold-email/" className="text-gray-400 hover:text-white text-xs transition-all">Cold Email Marketing</Link></li>
+              <li><Link to="/services/lead-generation/" className="text-gray-400 hover:text-white text-xs transition-all">Lead Generation</Link></li>
+              <li><Link to="/services/ai-agents/" className="text-gray-400 hover:text-white text-xs transition-all">AI Agents / Chatbots</Link></li>
+              <li><Link to="/services/website-experience/" className="text-gray-400 hover:text-white text-xs transition-all">Website Experience</Link></li>
+              <li><Link to="/services/social-media-marketing/" className="text-gray-400 hover:text-white text-xs transition-all">Social Media Marketing</Link></li>
+              <li><Link to="/services/content-marketing/" className="text-gray-400 hover:text-white text-xs transition-all">Content Creation Ecosystem</Link></li>
             </ul>
           </div>
 
