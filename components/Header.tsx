@@ -40,13 +40,13 @@ const Header: React.FC = () => {
     { name: 'Home', path: '/' },
     { 
       name: 'Services', 
-      path: '/services', 
+      path: '/services/', 
       isDropdown: true,
-      items: SERVICES.map(s => ({ name: s.title, path: `/services/${s.id}` }))
+      items: SERVICES.map(s => ({ name: s.title, path: `/services/${s.id}/` }))
     },
     { 
       name: 'Products', 
-      path: '/products', 
+      path: '/products/', 
       isDropdown: true,
       items: [
         { name: 'Email Automation Tool', path: '/products/email-automation' },
