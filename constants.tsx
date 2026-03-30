@@ -3,7 +3,7 @@ import { ServiceItem, PortfolioItem } from './types';
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'cold-email-marketing',
+    id: 'cold-email',
     title: 'Cold Email Marketing',
     description: 'Direct, high-intent outreach that actually gets replies.',
     icon: 'mail',
@@ -21,7 +21,7 @@ export const SERVICES: ServiceItem[] = [
     benefits: ['Paid Acquisition Strategy', 'Funnel & Landing Page Optimization', 'Lead Nurturing Architecture', 'Conversion Tracking & Analytics', 'Campaign Performance Optimization']
   },
   {
-    id: 'ai-agent-builder',
+    id: 'ai-agents',
     title: 'AI Agents / Chatbots',
     description: 'Intelligent Interaction & Automation Systems.',
     icon: 'cpu',
@@ -30,7 +30,7 @@ export const SERVICES: ServiceItem[] = [
     benefits: ['AI Chatbot Architecture', 'Lead Qualification Automation', 'Customer Support Workflows', 'CRM & Messaging Integrations', 'Performance Learning & Refinement']
   },
   {
-    id: 'website-experience-design',
+    id: 'website-experience',
     title: 'Website Experience',
     description: 'Conversion-Focused Digital Environments.',
     icon: 'layout',
@@ -49,7 +49,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 'content-marketing',
-    title: 'Content & Creator marketing',
+    title: 'Content & Creator Growth Systems',
     description: 'Narrative + Visibility Infrastructure for the Short-Form Era.',
     icon: 'file-text',
     imageUrl: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=2070&auto=format&fit=crop',
