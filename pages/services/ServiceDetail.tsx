@@ -10,6 +10,7 @@ import AIAgentsSection from '../../components/AIAgentsSection';
 import WebsiteExperienceSection from '../../components/WebsiteExperienceSection';
 import SocialMediaSection from '../../components/SocialMediaSection';
 import ContentCreatorSection from '../../components/ContentCreatorSection';
+import SEOAuthoritySection from '../../components/SEOAuthoritySection';
 
 const ServiceDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -46,7 +47,9 @@ const ServiceDetail: React.FC = () => {
   if (service.id === 'content-marketing') {
     return <ContentCreatorSection />;
   }
-
+  if (service.id === 'seo-authority') {
+    return <SEOAuthoritySection />;
+  }
   return (
     <div className="pt-40 pb-32 bg-[#FFFBF0] min-h-screen">
       <div className="container mx-auto px-6 max-w-4xl">

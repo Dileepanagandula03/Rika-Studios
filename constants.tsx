@@ -55,6 +55,21 @@ export const SERVICES: ServiceItem[] = [
     imageUrl: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=2070&auto=format&fit=crop',
     fullDescription: 'We design short-form content ecosystems that help emerging voices grow with clarity, consistency, and platform intelligence across Instagram, TikTok, and YouTube Shorts.',
     benefits: ['Creator Positioning & Niche Clarity', 'Short-Form Content Strategy', 'Viral Pattern Analysis', 'Personal Brand Storytelling', 'Growth Analytics & Refinement']
+  },
+  {
+    id: 'seo-authority',
+    title: 'SEO and Authority System',
+    description: 'Visibility that compounds.',
+    icon: 'search',
+    imageUrl: 'https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?q=80&w=1000&auto=format&fit=crop',
+    fullDescription: 'We design search and content systems that position your brand to be found, trusted, and chosen — consistently over time. Authority is built over time — but it starts with structure.',
+    benefits: [
+      'Search positioning strategy',
+      'Content-driven authority systems',
+      'Technical SEO foundation',
+      'Local and niche visibility optimization',
+      'Performance tracking & refinement'
+    ]
   }
 ];
 
