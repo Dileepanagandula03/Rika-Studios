@@ -11,7 +11,7 @@ const CASE_STUDIES = [
     subtitle: 'DNK Glam Events',
     tagline: 'Architecting Premium Positioning in a Regional Experiential Market',
     description: 'Elevating a regional wedding service into a recognized luxury experience brand through structured positioning and perception management.',
-    image: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop',
     color: 'bg-pink-50'
   },
   {
@@ -20,7 +20,7 @@ const CASE_STUDIES = [
     subtitle: 'DNK Glam Events',
     tagline: 'Structuring Experiential Authority for Business-Driven Event Ecosystems',
     description: 'Transitioning an experiential service brand into corporate ecosystems through structured positioning and operational credibility.',
-    image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop',
     color: 'bg-rose-50'
   },
   {
@@ -29,7 +29,7 @@ const CASE_STUDIES = [
     subtitle: 'DNK Glam Events',
     tagline: 'Designing a Scalable Infrastructure Model for the DMV Experiential Market',
     description: 'Transforming rentals from a supporting function into a strategically integrated revenue infrastructure for the DMV region.',
-    image: 'https://images.unsplash.com/photo-1470753937643-efeb931202a9?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop',
     color: 'bg-pink-50'
   },
   {
@@ -38,7 +38,7 @@ const CASE_STUDIES = [
     subtitle: 'DNK Glam Events',
     tagline: 'Leveraging Visual Virality to Build Demand Acceleration Systems in the DMV Market',
     description: 'Transforming visually driven celebration formats into high-impact demand acceleration systems for the regional experiential ecosystem.',
-    image: 'https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=2070&auto=format&fit=crop',
     color: 'bg-rose-50'
   },
   {
@@ -47,7 +47,7 @@ const CASE_STUDIES = [
     subtitle: 'DNK Glam Events',
     tagline: 'Designing a Recurring Micro-Event Demand Engine within the DMV Experiential Market',
     description: 'Transforming micro-event demand into a recurring acquisition engine through structured experiential positioning.',
-    image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop',
     color: 'bg-pink-50'
   },
   {
