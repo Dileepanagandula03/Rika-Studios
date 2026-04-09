@@ -18,6 +18,13 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      // ADD THIS SECTION BELOW:
+      build: {
+        // This converts modern '?' and '??' symbols into older code
+        // so that SEO tools and older browsers can read your site.
+        target: 'es2015',
+        cssTarget: 'chrome61'
       }
     };
 });
