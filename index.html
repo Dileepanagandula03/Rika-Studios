@@ -73,7 +73,19 @@
 <link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
-</html>
+    <div id="root">
+      <!-- SEO Fallback: This content is visible to tools and robots immediately -->
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center; padding: 20px; font-family: 'Inter', sans-serif;">
+        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: #1a1a1a;">Rika Studios</h1>
+        <p style="font-size: 1.1rem; color: #4a4a4a; max-width: 600px; line-height: 1.6;">
+          Creative digital agency specialising in AI, branding, web design, and growth marketing.
+        </p>
+        <noscript>
+          <p style="margin-top: 20px; color: #E91E63; font-weight: 500;">
+            Please enable JavaScript to experience our full interactive site.
+          </p>
+        </noscript>
+      </div>
+    </div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
