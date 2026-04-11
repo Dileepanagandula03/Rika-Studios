@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Heart, Search, Cpu, BarChart3, Waves, ChevronRight, Quote, Mail, Target, Layout, Share2, FileText } from 'lucide-react';
@@ -105,33 +104,19 @@ const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number
       }}
     >
       <div className="relative mb-8">
-        {/* Constant background glow */}
         <div className="absolute inset-[-30px] rounded-full blur-[50px] opacity-30 bg-gradient-to-tr from-[#E91E63]/20 via-[#FFB347]/10 to-transparent pointer-events-none animate-pulse"></div>
-        
-        {/* Rotating outer ring */}
         <div className="absolute inset-[-10px] rounded-full border border-dashed border-[#E91E63]/30 animate-spin-slow pointer-events-none"></div>
-        
-        {/* Orbiting element */}
         <div className="absolute inset-[-10px] animate-spin-slow pointer-events-none" style={{ animationDuration: '15s' }}>
           <div className="w-2 h-2 rounded-full bg-[#E91E63] absolute top-0 left-1/2 -translate-x-1/2 shadow-[0_0_10px_#E91E63]"></div>
         </div>
-        
-        {/* Main Circle */}
         <div className="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center border-2 border-white shadow-[0_20px_40px_-10px_rgba(233,30,99,0.15)] relative z-10 transition-all duration-700 group-hover:scale-110 group-hover:shadow-[0_40px_80px_-15px_rgba(233,30,99,0.4)] bg-gradient-to-br from-white via-white to-[#FFF5F7] overflow-hidden">
-          {/* Internal subtle gradient */}
           <div className="absolute inset-0 bg-gradient-to-tr from-[#E91E63]/5 via-transparent to-[#FFB347]/5 opacity-50"></div>
-          
-          {/* Number indicator */}
           <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] font-black tracking-[3px] text-[#E91E63]/30 group-hover:text-[#E91E63]/60 transition-colors">
             {String(index + 1).padStart(2, '0')}
           </div>
-
-          {/* Icon */}
           <div className="relative z-10 text-[#E91E63] opacity-80 group-hover:opacity-100 transition-opacity transform group-hover:scale-110 transition-transform duration-500">
             {ICON_MAP[service.icon] || <Sparkles size={40} />}
           </div>
-          
-          {/* Hover highlight */}
           <div className="absolute inset-0 bg-gradient-to-tr from-[#E91E63]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full pointer-events-none"></div>
         </div>
       </div>
@@ -158,6 +143,15 @@ const Home: React.FC = () => {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const block2Ref = useRef<HTMLDivElement>(null);
+
+  // BOT-FRIENDLY TIMER: This is the secret fix for SEO.
+  // It forces the content to show after 1 second even if the video hasn't loaded.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setBlock2Visible(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -201,8 +195,15 @@ const Home: React.FC = () => {
       {/* HERO */}
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
-          <video autoPlay loop muted playsInline onLoadedData={() => setVideoLoaded(true)}
-            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-0'}`}>
+          {/* REMOVED THE POSTER: Back to your original smooth loading feel */}
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            onLoadedData={() => setVideoLoaded(true)}
+            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-0'}`}
+          >
             <source src="https://www.pexels.com/download/video/35570103/" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white"></div>
@@ -229,7 +230,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* BLOCK 2: METHODOLOGY - CLEAN AESTHETIC */}
+      {/* BLOCK 2: METHODOLOGY */}
       <section ref={block2Ref} className="py-24 md:py-40 bg-[#F2F4E8] relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-32">
@@ -351,15 +352,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Custom Styles for Animations */}
       <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
+        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
       `}} />
     </div>
   );
