@@ -144,8 +144,7 @@ const Home: React.FC = () => {
   const [fade, setFade] = useState(true);
   const block2Ref = useRef<HTMLDivElement>(null);
 
-  // BOT-FRIENDLY TIMER: This is the secret fix for SEO.
-  // It forces the content to show after 1 second even if the video hasn't loaded.
+  // BOT-FRIENDLY TIMER: Forces visibility after 1 second for SEO tools
   useEffect(() => {
     const timer = setTimeout(() => {
       setBlock2Visible(true);
@@ -195,15 +194,8 @@ const Home: React.FC = () => {
       {/* HERO */}
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
-          {/* REMOVED THE POSTER: Back to your original smooth loading feel */}
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            onLoadedData={() => setVideoLoaded(true)}
-            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-0'}`}
-          >
+          <video autoPlay loop muted playsInline onLoadedData={() => setVideoLoaded(true)}
+            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-40'}`}>
             <source src="https://www.pexels.com/download/video/35570103/" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white"></div>

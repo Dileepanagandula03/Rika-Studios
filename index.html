@@ -13,61 +13,37 @@
     <meta name="twitter:title" content="rika.one" />
     <meta name="twitter:description" content="Creative digital agency specialising in AI, branding, web design, and growth marketing." />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+      // Safe Bot Detection
+      if (/bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent)) {
+        document.documentElement.className += ' is-bot';
+      }
+    </script>
+    
     <style>
+      /* Forces visibility ONLY for bots to fix the blank page issue */
+      .is-bot .opacity-0 { opacity: 1 !important; transform: none !important; }
+      
       body {
         font-family: 'Inter', sans-serif;
         background-color: #ffffff;
         color: #1a1a1a;
         overflow-x: hidden;
       }
-      h1, h2, h3, h4, .font-serif, .font-signature {
-        font-family: 'Inter', sans-serif;
-      }
-      .font-serif {
-        font-weight: 700;
-      }
-      .font-signature {
-        font-style: italic;
-        font-weight: 500;
-      }
+      h1, h2, h3, h4, .font-serif, .font-signature { font-family: 'Inter', sans-serif; }
+      .font-serif { font-weight: 700; }
+      .font-signature { font-style: italic; font-weight: 500; }
       .noise-bg::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        opacity: 0.03;
-        pointer-events: none;
+        content: ""; position: absolute; inset: 0; opacity: 0.03; pointer-events: none;
         background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
       }
-      
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-      }
-      .animate-float {
-        animation: float 6s ease-in-out infinite;
-      }
-
-      @keyframes bloom-pulse {
-        0%, 100% { transform: scale(1); opacity: 0.3; }
-        50% { transform: scale(1.2); opacity: 0.5; }
-      }
-      .animate-bloom {
-        animation: bloom-pulse 4s ease-in-out infinite;
-      }
-
-      .particle {
-        position: absolute;
-        border-radius: 50%;
-        pointer-events: none;
-        animation: drift 3s ease-out forwards;
-      }
-
-      @keyframes drift {
-        to {
-          transform: translate(var(--tw-drift-x), var(--tw-drift-y));
-          opacity: 0;
-        }
-      }
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+      .animate-float { animation: float 6s ease-in-out infinite; }
+      @keyframes bloom-pulse { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.2); opacity: 0.5; } }
+      .animate-bloom { animation: bloom-pulse 4s ease-in-out infinite; }
+      .particle { position: absolute; border-radius: 50%; pointer-events: none; animation: drift 3s ease-out forwards; }
+      @keyframes drift { to { transform: translate(var(--tw-drift-x), var(--tw-drift-y)); opacity: 0; } }
     </style>
     <link rel="stylesheet" href="/index.css">
   </head>
