@@ -8,6 +8,8 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
+        // SMART FIX: Disable HMR websocket to stop the "Port in use" error immediately
+        hmr: false 
       },
       plugins: [react()],
       define: {
@@ -19,10 +21,8 @@ export default defineConfig(({ mode }) => {
           '@': path.resolve(__dirname, '.'),
         }
       },
-      // ADD THIS SECTION BELOW:
       build: {
-        // This converts modern '?' and '??' symbols into older code
-        // so that SEO tools and older browsers can read your site.
+        // KEEP THIS: This is the fix for your SEO "No Data" issue
         target: 'es2015',
         cssTarget: 'chrome61'
       }
