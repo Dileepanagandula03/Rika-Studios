@@ -22,8 +22,19 @@
     </script>
     
     <style>
-      /* Forces visibility ONLY for bots to fix the blank page issue */
-      .is-bot .opacity-0 { opacity: 1 !important; transform: none !important; }
+      /* 1. Forces visibility ONLY for bots inside the MAIN content area */
+      .is-bot main .opacity-0 { 
+        opacity: 1 !important; 
+        transform: none !important; 
+        visibility: visible !important;
+      }
+
+      /* 2. Explicitly keeps HEADER dropdowns hidden for bots so they don't 'go mad' */
+      .is-bot header .opacity-0 { 
+        opacity: 0 !important; 
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
       
       body {
         font-family: 'Inter', sans-serif;
