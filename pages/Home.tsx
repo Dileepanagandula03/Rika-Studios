@@ -31,12 +31,12 @@ const TESTIMONIALS = [
 ];
 
 const INSIGHTS: Record<string, string> = {
-  'cold-email-marketing': 'Direct outreach that gets replies.',
+  'cold-email': 'Direct outreach that gets replies.',
   'lead-generation': 'Engineered for high-intent traffic.',
-  'ai-agent-builder': 'Amplifying brand voice with AI.',
-  'website-experience-design': 'Your living authority asset.',
+  'ai-agents': 'Amplifying brand voice with AI.',
+  'website-experience': 'Your living authority asset.',
   'social-media-marketing': 'Strategic content for brand authority.',
-  'creator-marketing': 'Storytelling that drives organic growth.'
+  'content-marketing': 'Storytelling that drives organic growth.'
 };
 
 const ProcessStep: React.FC<{ 
@@ -76,8 +76,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   'cpu': <Cpu size={40} />,
   'layout': <Layout size={40} />,
   'share-2': <Share2 size={40} />,
-  'file-text': <FileText size={40} />,
-  'search': <Search size={40} />
+  'file-text': <FileText size={40} />
 };
 
 const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number }> = ({ service, index }) => {
@@ -138,7 +137,7 @@ const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number
 };
 
 const Home: React.FC = () => {
-  // RESILIENT STATE: Visible by default
+  // FIX: Set these to true by default so bots see content immediately.
   const [videoLoaded, setVideoLoaded] = useState(true);
   const [block2Visible, setBlock2Visible] = useState(true);
   const [underlineProgress, setUnderlineProgress] = useState(1);
@@ -147,6 +146,16 @@ const Home: React.FC = () => {
   const block2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBlock2Visible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (block2Ref.current) observer.observe(block2Ref.current);
+
     const handleScroll = () => {
       if (!block2Ref.current) return;
       const rect = block2Ref.current.getBoundingClientRect();
@@ -160,6 +169,7 @@ const Home: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => {
+      observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
@@ -177,8 +187,14 @@ const Home: React.FC = () => {
       {/* HERO */}
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
-          <video autoPlay loop muted playsInline onLoadedData={() => setVideoLoaded(true)}
-            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-40'}`}>
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            onLoadedData={() => setVideoLoaded(true)}
+            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-0'}`}
+          >
             <source src="https://www.pexels.com/download/video/35570103/" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white"></div>
@@ -209,7 +225,7 @@ const Home: React.FC = () => {
       <section ref={block2Ref} className="py-24 md:py-40 bg-[#F2F4E8] relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-32">
-            <div className="lg:w-5/12 opacity-100 translate-x-0">
+            <div className={`lg:w-5/12 transition-all duration-[1000ms] transform ${block2Visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
               <span className="text-[#E91E63] text-[10px] uppercase tracking-[12px] font-black block mb-8">Our Methodology</span>
               <div className="relative inline-block mb-10">
                 <h2 className="text-4xl md:text-6xl font-bold text-[#2D3134] leading-[1.05] relative z-10">
@@ -242,10 +258,10 @@ const Home: React.FC = () => {
             </div>
 
             <div className="lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20 pt-12">
-              <ProcessStep isVisible={true} index={0} step="01" title="Semantic Audit" icon={<Search size={28} />} desc="Finding high-intent language your customers use when they're ready to buy." />
-              <ProcessStep isVisible={true} index={1} step="02" title="Authored Trust" icon={<Waves size={28} />} desc="Digital homes that radiate high-authority trust in every pixel." />
-              <ProcessStep isVisible={true} index={2} step="03" title="Guided Nurture" icon={<Cpu size={28} />} desc="AI agents that speak with your unique brand soul to bridge the gap to sales." />
-              <ProcessStep isVisible={true} index={3} step="04" title="Live Scale" icon={<BarChart3 size={28} />} desc="Expand what works through real-time, transparent growth analytics." />
+              <ProcessStep isVisible={block2Visible} index={0} step="01" title="Semantic Audit" icon={<Search size={28} />} desc="Finding high-intent language your customers use when they're ready to buy." />
+              <ProcessStep isVisible={block2Visible} index={1} step="02" title="Authored Trust" icon={<Waves size={28} />} desc="Digital homes that radiate high-authority trust in every pixel." />
+              <ProcessStep isVisible={block2Visible} index={2} step="03" title="Guided Nurture" icon={<Cpu size={28} />} desc="AI agents that speak with your unique brand soul to bridge the gap to sales." />
+              <ProcessStep isVisible={block2Visible} index={3} step="04" title="Live Scale" icon={<BarChart3 size={28} />} desc="Expand what works through real-time, transparent growth analytics." />
             </div>
           </div>
         </div>

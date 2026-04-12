@@ -14,19 +14,11 @@
     <meta name="twitter:description" content="Creative digital agency specialising in AI, branding, web design, and growth marketing." />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #ffffff;
-        color: #1a1a1a;
-        overflow-x: hidden;
-      }
+      body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1a1a1a; overflow-x: hidden; }
       h1, h2, h3, h4, .font-serif, .font-signature { font-family: 'Inter', sans-serif; }
       .font-serif { font-weight: 700; }
       .font-signature { font-style: italic; font-weight: 500; }
-      .noise-bg::before {
-        content: ""; position: absolute; inset: 0; opacity: 0.03; pointer-events: none;
-        background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
-      }
+      .noise-bg::before { content: ""; position: absolute; inset: 0; opacity: 0.03; pointer-events: none; background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png'); }
       @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
       .animate-float { animation: float 6s ease-in-out infinite; }
       @keyframes bloom-pulse { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.2); opacity: 0.5; } }
@@ -37,13 +29,7 @@
     <link rel="stylesheet" href="/index.css">
   </head>
   <body>
-    <div id="root">
-      <!-- SEO Content: Invisible to humans, Visible to bots -->
-      <div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;">
-        <h1>Rika Studios</h1>
-        <p>Creative digital agency specialising in AI, branding, web design, and growth marketing. Growth infrastructure for the human era.</p>
-      </div>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
