@@ -76,7 +76,8 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   'cpu': <Cpu size={40} />,
   'layout': <Layout size={40} />,
   'share-2': <Share2 size={40} />,
-  'file-text': <FileText size={40} />
+  'file-text': <FileText size={40} />,
+  'search': <Search size={40} />
 };
 
 const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number }> = ({ service, index }) => {
@@ -137,7 +138,7 @@ const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number
 };
 
 const Home: React.FC = () => {
-  // FIX: Set these to true by default so bots see content immediately.
+  // SEO FIX: Set these to true by default so bots see content immediately.
   const [videoLoaded, setVideoLoaded] = useState(true);
   const [block2Visible, setBlock2Visible] = useState(true);
   const [underlineProgress, setUnderlineProgress] = useState(1);
@@ -187,15 +188,17 @@ const Home: React.FC = () => {
       {/* HERO */}
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
+          {/* UPDATED: Your exact video block with local path and poster */}
           <video 
             autoPlay 
             loop 
             muted 
             playsInline 
+            poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
             onLoadedData={() => setVideoLoaded(true)}
-            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-0'}`}
+            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-40'}`}
           >
-            <source src="https://www.pexels.com/download/video/35570103/" type="video/mp4" />
+            <source src="/videos/hero-bg.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white"></div>
         </div>
