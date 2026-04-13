@@ -76,8 +76,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   'cpu': <Cpu size={40} />,
   'layout': <Layout size={40} />,
   'share-2': <Share2 size={40} />,
-  'file-text': <FileText size={40} />,
-  'search': <Search size={40} />
+  'file-text': <FileText size={40} />
 };
 
 const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number }> = ({ service, index }) => {
@@ -138,7 +137,6 @@ const MagneticServiceItem: React.FC<{ service: typeof SERVICES[0]; index: number
 };
 
 const Home: React.FC = () => {
-  // SEO FIX: Set these to true by default so bots see content immediately.
   const [videoLoaded, setVideoLoaded] = useState(true);
   const [block2Visible, setBlock2Visible] = useState(true);
   const [underlineProgress, setUnderlineProgress] = useState(1);
@@ -188,18 +186,20 @@ const Home: React.FC = () => {
       {/* HERO */}
       <section className="relative h-[100vh] flex items-center justify-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
-          {/* UPDATED: Your exact video block with local path and poster */}
+
+          {/* ✅ CHANGED: src now points to self-hosted video, poster added for SEO */}
           <video 
             autoPlay 
             loop 
             muted 
-            playsInline 
-            poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+            playsInline
+            poster="/images/hero-poster.jpg"
             onLoadedData={() => setVideoLoaded(true)}
-            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-40'}`}
+            className={`w-full h-full object-cover transition-opacity duration-[2000ms] ${videoLoaded ? 'opacity-80' : 'opacity-0'}`}
           >
             <source src="/videos/hero-bg.mp4" type="video/mp4" />
           </video>
+
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white"></div>
         </div>
         
@@ -254,7 +254,6 @@ const Home: React.FC = () => {
               <p className="text-gray-700/80 text-lg font-light leading-relaxed mb-12 max-w-sm">
                 Growth without visibility is chaos. We design predictable demand engines built on buyer psychology, not platform tricks.
               </p>
-              
               <Link to="/about" className="text-[11px] font-black uppercase tracking-[4px] hover:text-[#E91E63] transition-colors inline-flex items-center gap-2 group">
                 Discover Our Ethos <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -276,7 +275,6 @@ const Home: React.FC = () => {
           <div className="absolute top-[-10%] left-[-5%] w-[60%] h-[70%] bg-sky-200/50 rounded-full blur-[120px]"></div>
           <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[80%] bg-rose-200/50 rounded-full blur-[140px]"></div>
         </div>
-        
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-24">
             <span className="inline-block text-[#E91E63] text-[10px] uppercase tracking-[20px] font-black mb-6">Expertise</span>
@@ -293,34 +291,33 @@ const Home: React.FC = () => {
       <section className="py-32 relative overflow-hidden border-t border-white/20 bg-[#FFF5E1]">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto">
-             <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
-                <div className="md:w-1/2">
-                   <span className="text-[#E91E63] text-[9px] uppercase tracking-[10px] font-black block mb-8 drop-shadow-sm">Voices of Growth</span>
-                   <div className="relative">
-                      <Quote size={80} className="text-[#E91E63]/10 absolute -top-12 -left-8" />
-                      <div className={`transition-all duration-700 ease-out transform ${fade ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-                        <p className="text-2xl md:text-4xl font-bold text-[#2D3134] leading-snug italic mb-10">
-                          "{TESTIMONIALS[testimonialIndex].quote}"
-                        </p>
-                        <div className="flex flex-col">
-                           <span className="italic font-medium text-3xl text-[#E91E63] mb-1 drop-shadow-sm">{TESTIMONIALS[testimonialIndex].signature}</span>
-                           <span className="text-[10px] uppercase tracking-[4px] font-black text-[#2D3134]/60">
-                             {TESTIMONIALS[testimonialIndex].author} — {TESTIMONIALS[testimonialIndex].role}
-                           </span>
-                        </div>
-                      </div>
-                   </div>
+            <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+              <div className="md:w-1/2">
+                <span className="text-[#E91E63] text-[9px] uppercase tracking-[10px] font-black block mb-8 drop-shadow-sm">Voices of Growth</span>
+                <div className="relative">
+                  <Quote size={80} className="text-[#E91E63]/10 absolute -top-12 -left-8" />
+                  <div className={`transition-all duration-700 ease-out transform ${fade ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
+                    <p className="text-2xl md:text-4xl font-bold text-[#2D3134] leading-snug italic mb-10">
+                      "{TESTIMONIALS[testimonialIndex].quote}"
+                    </p>
+                    <div className="flex flex-col">
+                      <span className="italic font-medium text-3xl text-[#E91E63] mb-1 drop-shadow-sm">{TESTIMONIALS[testimonialIndex].signature}</span>
+                      <span className="text-[10px] uppercase tracking-[4px] font-black text-[#2D3134]/60">
+                        {TESTIMONIALS[testimonialIndex].author} — {TESTIMONIALS[testimonialIndex].role}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                
-                <div className="md:w-1/2 flex justify-center md:justify-end items-center">
-                   <button 
-                     onClick={handleNextTestimonial}
-                     className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white/90 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center text-[#2D3134] hover:bg-[#E91E63] hover:text-white transition-all duration-500 shadow-2xl active:scale-90"
-                   >
-                      <ChevronRight size={24} />
-                   </button>
-                </div>
-             </div>
+              </div>
+              <div className="md:w-1/2 flex justify-center md:justify-end items-center">
+                <button 
+                  onClick={handleNextTestimonial}
+                  className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white/90 backdrop-blur-md border border-white/50 flex flex-col items-center justify-center text-[#2D3134] hover:bg-[#E91E63] hover:text-white transition-all duration-500 shadow-2xl active:scale-90"
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -328,21 +325,21 @@ const Home: React.FC = () => {
       {/* BLOCK 5: CTA */}
       <section className="py-32 relative overflow-hidden bg-[#F7F6F2] border-t border-gray-100">
         <div className="container mx-auto px-6 text-center max-w-2xl relative z-10">
-           <div className="flex justify-center mb-10">
-              <Heart size={32} fill="#E91E63" className="text-[#E91E63] animate-float" />
-           </div>
-           <h2 className="text-3xl md:text-5xl font-bold text-[#2D3134] mb-10 italic leading-tight">
-             Let’s build <br /> <span className="text-[#E91E63]">something that lasts.</span>
-           </h2>
-           <p className="text-gray-500 mb-12 max-w-md mx-auto font-light leading-relaxed">
-             We partner with founders, creators, and brands who care about depth, clarity, and intentional growth.
-           </p>
-           <Link to="/contact" className="group relative inline-flex items-center gap-4 bg-[#2D3134] text-white px-16 py-6 rounded-full text-[11px] uppercase font-black tracking-[5px] hover:bg-[#E91E63] transition-all shadow-xl hover:scale-105 active:scale-95">
-             Start Conversation <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-           </Link>
-           <div className="mt-20 flex flex-col items-center">
-              <span className="italic font-medium text-5xl text-[#2D3134]/20">Rika Studios</span>
-           </div>
+          <div className="flex justify-center mb-10">
+            <Heart size={32} fill="#E91E63" className="text-[#E91E63] animate-float" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-[#2D3134] mb-10 italic leading-tight">
+            Let's build <br /> <span className="text-[#E91E63]">something that lasts.</span>
+          </h2>
+          <p className="text-gray-500 mb-12 max-w-md mx-auto font-light leading-relaxed">
+            We partner with founders, creators, and brands who care about depth, clarity, and intentional growth.
+          </p>
+          <Link to="/contact" className="group relative inline-flex items-center gap-4 bg-[#2D3134] text-white px-16 py-6 rounded-full text-[11px] uppercase font-black tracking-[5px] hover:bg-[#E91E63] transition-all shadow-xl hover:scale-105 active:scale-95">
+            Start Conversation <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+          </Link>
+          <div className="mt-20 flex flex-col items-center">
+            <span className="italic font-medium text-5xl text-[#2D3134]/20">Rika Studios</span>
+          </div>
         </div>
       </section>
 
